@@ -1,0 +1,11 @@
+diff a/test.txt b/test.txt	(rejected hunks)
+@@ -1,4 +1,7 @@
+ hogehoge
+ aaa
+ bbb
+-ccc
+\ No newline at end of file
++ccc
++
++
++eee
