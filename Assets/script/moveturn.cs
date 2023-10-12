@@ -5,8 +5,17 @@ using UnityEngine;
 // キーを押すと、スプライトが移動する
 public class moveturn : MonoBehaviour
 {
-
+	public GameObject enemy; //オブジェクト読み込み
+	public enemymove enemymove;
 	public float speed = 2; // スピード：Inspectorで指定
+
+	public bool playerTurn;
+
+	void Start()
+	{
+		playerTurn = true;
+
+	}
 
 	public void PauseGame()
 	{
@@ -18,24 +27,50 @@ public class moveturn : MonoBehaviour
 		Time.timeScale = 1;
 	}
 
+	IEnumerator MoveCoroutine()
+	{
+		//ここに処理を書く
+		Debug.Log("うごいてる!");
+
+		//1フレーム停止
+		yield return new WaitForSeconds(1.0f);
+
+		//ここに再開後の処理を書く
+		playerTurn = false;
+	}
+
 	void Update()
 	{ // ずっと行う
-		if (Input.GetKey("d"))
-		{ // もし、右キーが押されたら
-			transform.position += speed * transform.right * Time.deltaTime;
+		Vector3 pos = transform.position;
+
+		if (playerTurn == true)
+		{
+			if (Input.GetKey("d"))
+			{ // もし、右キーが押されたら
+				transform.position += new Vector3(1, 0, 0) * Time.deltaTime;
+				Debug.Log("ikuo");
+				StartCoroutine("MoveCoroutine");
+			}
+			if (Input.GetKey("a"))
+			{ // もし、左キーが押されたら
+				transform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
+				StartCoroutine("MoveCoroutine");
+			}
+			if (Input.GetKey("w"))
+			{ // もし、上キーが押されたら
+				transform.position += new Vector3(0, 0, 1) * Time.deltaTime;
+				StartCoroutine("MoveCoroutine");
+				
+			}
+			if (Input.GetKey("s"))
+			{ // もし、下キーが押されたら
+				transform.position += new Vector3(0, 0, -1) * Time.deltaTime;
+				StartCoroutine("MoveCoroutine");
+			}
+
 		}
-		if (Input.GetKey("a"))
-		{ // もし、左キーが押されたら
-			transform.position -= speed * transform.right * Time.deltaTime;
-		}
-		if (Input.GetKey("w"))
-		{ // もし、上キーが押されたら
-			transform.position += speed * transform.forward * Time.deltaTime;
-		}
-		if (Input.GetKey("s"))
-		{ // もし、下キーが押されたら
-			transform.position -= speed * transform.forward * Time.deltaTime;
-		}
+
+		
 		if (Input.GetKey("escape"))
 		{ // もし、下キーが押されたら
 			Debug.Log("DON!");
