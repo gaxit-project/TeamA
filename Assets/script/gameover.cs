@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class gameover : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class gameover : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOver");
+            FadeManager.Instance.LoadScene("GameOver", 2.0f);
         }
     }
 }
