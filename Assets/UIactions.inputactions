@@ -1,0 +1,74 @@
+{
+    "name": "UIactions",
+    "maps": [
+        {
+            "name": "Navigate",
+            "id": "98f63a2a-8ad8-40d2-8328-2aeb0b84469b",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "aca36acf-eda3-48ad-bfa5-55ebdc76cbbc",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2f050f75-94a4-453a-8c7a-c1d3fd633030",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Select",
+            "id": "d1c880ca-e16f-4ee6-9206-ba6cedc8da3e",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "6172507c-25f9-485b-b241-faba94519857",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "abf0443d-5649-4cf0-b4fa-725608f3854f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
