@@ -9,7 +9,9 @@ public class moveturn : MonoBehaviour
 	GameManager gameManager;
 
 	public GameObject enemy; //オブジェクト読み込み
-	public enemymove enemymove;
+    public GameObject normal; //オブジェクト読み込み
+    public GameObject col; //オブジェクト読み込み
+    public enemymove enemymove;
 	public float speed = 2; // スピード：Inspectorで指定
 
 	public bool playerTurn;
@@ -82,19 +84,25 @@ public class moveturn : MonoBehaviour
 		if (other.gameObject.name == "Yellow")
 		{
 			GetComponent<Renderer>().material.color = Color.yellow;
-			isNormal = true;
+            col.GetComponent<Renderer>().material.color = new Color32(255, 255, 0, 255); //色、透明度変更
+            normal.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 0); //透明化
+            isNormal = true;
 			Debug.Log("Enter SafeZone");
 		}
 		else if (other.gameObject.name == "Red")
         {
 			GetComponent<Renderer>().material.color = Color.red;
-			isNormal = true;
+            col.GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 255);
+            normal.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 0);
+            isNormal = true;
 			Debug.Log("Enter SafeZone");
 		}
 		else if (other.gameObject.name == "Blue")
 		{
 			GetComponent<Renderer>().material.color = Color.blue;
-			isNormal = true;
+            col.GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 255);
+            normal.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 0);
+            isNormal = true;
 			Debug.Log("Enter SafeZone");
 		}
 	}
