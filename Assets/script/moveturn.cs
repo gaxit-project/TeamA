@@ -5,11 +5,6 @@ using UnityEngine;
 // キーを押すと、スプライトが移動する
 public class moveturn : MonoBehaviour
 {
-<<<<<<< HEAD
-
-	public float speed = 2; // スピード：Inspectorで指定
-
-=======
 	GameObject GameManager;//Gamemanager読み込み
 	GameManager gameManager;
 
@@ -35,7 +30,6 @@ public class moveturn : MonoBehaviour
 		gameManager = GameManager.GetComponent<GameManager>(); // スクリプトを取得
 	}
 
->>>>>>> 7a34e75a2f65191e311aff338a6971ab03dae4e0
 	public void PauseGame()
 	{
 		Time.timeScale = 0;
@@ -46,26 +40,6 @@ public class moveturn : MonoBehaviour
 		Time.timeScale = 1;
 	}
 
-<<<<<<< HEAD
-	void Update()
-	{ // ずっと行う
-		if (Input.GetKey("d"))
-		{ // もし、右キーが押されたら
-			transform.position += speed * transform.right * Time.deltaTime;
-		}
-		if (Input.GetKey("a"))
-		{ // もし、左キーが押されたら
-			transform.position -= speed * transform.right * Time.deltaTime;
-		}
-		if (Input.GetKey("w"))
-		{ // もし、上キーが押されたら
-			transform.position += speed * transform.forward * Time.deltaTime;
-		}
-		if (Input.GetKey("s"))
-		{ // もし、下キーが押されたら
-			transform.position -= speed * transform.forward * Time.deltaTime;
-		}
-=======
 	/*IEnumerator MoveCoroutine()
 	{
 		//ここに処理を書く
@@ -247,7 +221,6 @@ public class moveturn : MonoBehaviour
 		}
 		*/
 
->>>>>>> 7a34e75a2f65191e311aff338a6971ab03dae4e0
 		if (Input.GetKey("escape"))
 		{ // もし、下キーが押されたら
 			Debug.Log("DON!");
