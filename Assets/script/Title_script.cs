@@ -12,7 +12,7 @@ public class Title_script : MonoBehaviour
 
     public void Start_menu()
     {
-        FadeManager.Instance.LoadScene("Test_play", 2.0f);
+        FadeManager.Instance.LoadScene("DebugRoom", 2.0f);
     }
 
     public void Exit_menu()
