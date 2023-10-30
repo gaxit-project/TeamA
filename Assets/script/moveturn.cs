@@ -5,6 +5,8 @@ using UnityEngine;
 // キーを押すと、スプライトが移動する
 public class moveturn : MonoBehaviour
 {
+	private Controller controller_;//Xboxコントローラーが受け付けるように変数として定義
+
 	GameObject GameManager;//Gamemanager読み込み
 	GameManager gameManager;
 
@@ -28,6 +30,7 @@ public class moveturn : MonoBehaviour
 
 	void Start()
 	{
+		controller_ = new Controller();
 		playerTurn = true;
 		GameManager = GameObject.Find("GameManager");
 		gameManager = GameManager.GetComponent<GameManager>(); // スクリプトを取得
