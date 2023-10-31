@@ -199,7 +199,7 @@ public class moveturn : MonoBehaviour
 				up = false;
 				down = false;
 			}
-			else if (Input.GetKey("a") && left == true && PPreX - PLx < 0.8)
+			else if (Input.GetKey("a") && left == true && PPreX - PLx < 0.9)
 			{ // もし、左キーが押されたら
 				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -219,7 +219,7 @@ public class moveturn : MonoBehaviour
 				right = false;
 				left = false;
 			}
-			else if (playerTurn == true && Input.GetKey("s") && down == true && PPreZ - PLz < 0.8)
+			else if (Input.GetKey("s") && down == true && PPreZ - PLz < 0.9)
 			{ // もし、下キーが押されたら
 				PLtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
