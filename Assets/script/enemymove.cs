@@ -5,13 +5,15 @@ using UnityEngine;
 // キーを押すと、スプライトが移動する
 public class enemymove : MonoBehaviour
 {
+	public GameObject TurnManagar; //オブジェクト読み込み
+	public TurnManager turnmanager; //オブジェクト読み込み
 	public GameObject player; //オブジェクト読み込み
 	public GameObject Hantei; //オブジェクト読み込み
 	public moveturn moveturn; //スクリプト読み込み
 	public Hanteiscript Hanteiscript; //スクリプト読み込み
 	public float speed = 2; // スピード：Inspectorで指定
 
-	public bool playerTurn;
+	public bool enemyTurn;
 	public bool sakuteki = false;//プレイヤーを見つけたかどうか
 	public bool up = true;
 	public bool down = true;
@@ -27,6 +29,7 @@ public class enemymove : MonoBehaviour
 
 	void Start()
 	{
+		enemyTurn = false;
 		fromx = PreX;
 		fromz = PreZ;
 	}
@@ -41,7 +44,7 @@ public class enemymove : MonoBehaviour
 
 		//ここに再開後の処理を書く
 		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), 0, Mathf.Floor(this.transform.position.z));
-		moveturn.playerTurn = true;
+		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;
 	}
@@ -60,7 +63,7 @@ public class enemymove : MonoBehaviour
 		worldAngle.y = worldAngle.y + 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 		ENtransform.eulerAngles = worldAngle; // 回転角度を設定
 		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), 0, Mathf.Floor(this.transform.position.z));
-		moveturn.playerTurn = true;
+		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;
 	}
@@ -76,7 +79,7 @@ public class enemymove : MonoBehaviour
 
 		//ここに再開後の処理を書く
 		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), 0, Mathf.Floor(this.transform.position.z));
-		moveturn.playerTurn = true;
+		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;
 	}
@@ -86,7 +89,7 @@ public class enemymove : MonoBehaviour
     {
 		Debug.Log("敵がうごいてる!");
 		ENx / Mathf.Floor = PreX;
-		moveturn.playerTurn = true;
+		enemyTurn = false;
 		PreX = this.transform.position.x;
 
 	}*/
@@ -107,11 +110,11 @@ public class enemymove : MonoBehaviour
 		var ENx = this.transform.position.x;
 		var ENz = this.transform.position.z;
 
-		if (moveturn.playerTurn == false && sakuteki == false)
+		if (enemyTurn == true && sakuteki == false)
         {
 			if(fromx == ENx && fromz == ENz)
             {
-				Debug.Log("監視中!");
+				//Debug.Log("監視中!");
 				StartCoroutine("ESakutekiCoroutine");
 			}
 			else if (Mathf.Floor(fromx) < Mathf.Floor(ENx) && left == true)//左
@@ -119,7 +122,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-													  //Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				up = false;
 				down = false;
@@ -131,7 +134,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 				worldAngle.y = 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-													  //Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				up = false;
 				down = false;
@@ -144,7 +147,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 					worldAngle.y = 180.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-														  //Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					up = false;
 					right = false;
@@ -155,7 +158,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 					worldAngle.y = 0.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-														  //Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					down = false;
 					right = false;
@@ -163,7 +166,7 @@ public class enemymove : MonoBehaviour
 				}
 			}
 		}
-		else if (moveturn.playerTurn == false && sakuteki == true)
+		else if (enemyTurn == true && sakuteki == true)
 		{
 			//Debug.Log(moveturn.transform.position + "a");
 			//Debug.Log("(" + PLx + "." + PLz + ")" + " " + "(" + ENx + "." + ENz + ")");
@@ -174,7 +177,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				//Debug.Log(ENx + " " + PreX);
+				Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				up = false;
 				down = false;
@@ -186,7 +189,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 				worldAngle.y = 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				//Debug.Log(ENx + " " + PreX);
+				Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				up = false;
 				down = false;
@@ -199,7 +202,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 					worldAngle.y = 180.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					//Debug.Log(ENz + " " + PreZ);
+					Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					up = false;
 					right = false;
@@ -210,7 +213,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 					worldAngle.y = 0.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					//Debug.Log(ENz + " " + PreZ);
+					Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					down = false;
 					right = false;
@@ -218,14 +221,14 @@ public class enemymove : MonoBehaviour
 				}
 			}
 
-			if (Mathf.Floor(Mathf.Abs(PreX)) > Mathf.Floor(Mathf.Abs(ENx)))
+			if (Mathf.Floor(Mathf.Abs(PreX)) > Mathf.Floor(Mathf.Abs(ENx)))//左
 			{
-				if (Mathf.Abs(PreX) - Mathf.Abs(ENx) > 0.9)
+				if (Mathf.Abs(PreX) - Mathf.Abs(ENx) > 0.8)
 				{
-					Debug.Log("a");
-					moveturn.playerTurn = true;
+					Debug.Log("b");
+					enemyTurn = false;
 					//StartCoroutine("ManyEnemyCoroutine");
-					PreX = this.transform.position.x;
+					//PreX = Mathf.Floor(this.transform.position.x);
 				}
 			}
 			else if (Mathf.Floor(Mathf.Abs(PreX)) < Mathf.Floor(Mathf.Abs(ENx)))
@@ -233,9 +236,9 @@ public class enemymove : MonoBehaviour
 				if (Mathf.Abs(ENx) - Mathf.Abs(PreX) > 1.15)
 				{
 					Debug.Log("a");
-					moveturn.playerTurn = true;
+					enemyTurn = false;
 					//StartCoroutine("ManyEnemyCoroutine");
-					PreX = this.transform.position.x;
+					//PreX = Mathf.Floor(this.transform.position.x);
 				}
 			}
 			else if (Mathf.Floor(moveturn.PPreX) == Mathf.Floor(PreX))
@@ -245,9 +248,9 @@ public class enemymove : MonoBehaviour
 					if (PreZ - ENz > 0.8)
 					{
 						Debug.Log("a");
-						moveturn.playerTurn = true;
+						enemyTurn = false;
 						//StartCoroutine("ManyEnemyCoroutine");
-						PreZ = this.transform.position.z;
+						//PreZ = Mathf.Floor(this.transform.position.z);
 					}
 				}
 				else if (PreZ < ENz)
@@ -255,17 +258,17 @@ public class enemymove : MonoBehaviour
 					if (ENz - PreZ > 1)
 					{
 						Debug.Log("a");
-						moveturn.playerTurn = true;
+						enemyTurn = false;
 						//StartCoroutine("ManyEnemyCoroutine");
-						PreZ = this.transform.position.z;
+						//PreZ = Mathf.Floor(this.transform.position.z);
 					}
 				}
 			}
 		}
-		else if (moveturn.playerTurn == true)
+		else if (enemyTurn == false)
 		{
 			//StopCoroutine("EMoveCoroutine");
-			transform.position = new Vector3(Mathf.Floor(PreX), 0, Mathf.Floor(PreZ));
+			//transform.position = new Vector3(Mathf.Floor(PreX), 0, Mathf.Floor(PreZ));
 			//Debug.Log("あげるわ");
 			//moveturn.playerTurn = true;
 			//PreX = this.transform.position.x;

@@ -10,6 +10,8 @@ public class moveturn : MonoBehaviour
 	GameObject GameManager;//Gamemanager読み込み
 	GameManager gameManager;
 
+	public GameObject TurnManagar; //オブジェクト読み込み
+	public TurnManager turnmanager ; //オブジェクト読み込み
 	public GameObject enemy; //オブジェクト読み込み
 	public GameObject enemyhantei; //オブジェクト読み込み
 	public GameObject enemy2; //オブジェクト読み込み
@@ -105,12 +107,12 @@ public class moveturn : MonoBehaviour
 		yield return new WaitForSeconds(0.0f);
 
 		//ここに再開後の処理を書く
-		Debug.Log("完了");
+		//Debug.Log("完了");
 		Debug.Log(Mathf.Floor(PPreX) + " " + this.transform.position.y + " " + Mathf.Floor(this.transform.position.z));
 		transform.position = new Vector3(PPreX, this.transform.position.y, Mathf.Floor(this.transform.position.z));
 		playerTurn = false;
 		//StartCoroutine("PosKakuteiCoroutine");
-		PPreZ = this.transform.position.z;
+		//PPreZ = this.transform.position.z;
 	}
 
 	IEnumerator PosKakuteiCoroutine()
@@ -161,8 +163,14 @@ public class moveturn : MonoBehaviour
 			enemymove2.sakuteki = true;
 		}
 		else if (other.gameObject.name == "OutZone")
-        {
+		{
 			Debug.Log("GameOver");
+			FadeManager.Instance.LoadScene("GameOver", 1.0f);
+		}
+		else if (other.gameObject.name == "ClearObject")
+		{
+			Debug.Log("GameClear");
+			FadeManager.Instance.LoadScene("GameClear", 1.0f);
 		}
 	}
 
@@ -181,27 +189,27 @@ public class moveturn : MonoBehaviour
 		{
 			//Debug.Log("行くぜ！");
 			//Debug.Log(playerTurn);
-			if (Input.GetKey("d") && right == true)
+			if (Input.GetKey("d") && right == true && PLx - PPreX < 1)
 			{ // もし、右キーが押されたら
 				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
-				Debug.Log("今:" + PLx + " " + "前:" + PPreX);
+				//Debug.Log("今:" + PLx + " " + "前:" + PPreX);
 				//StartCoroutine("MoveCoroutine");
 				worldAngle.y = 45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
 				up = false;
 				down = false;
 			}
-			if (Input.GetKey("a") && left == true)
+			else if (Input.GetKey("a") && left == true && PPreX - PLx < 0.8)
 			{ // もし、左キーが押されたら
 				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log("今:" + PLx + " " + "前:" + PPreX);
+				//Debug.Log("今:" + PLx + " " + "前:" + PPreX);
 				//StartCoroutine("MoveCoroutine");
 				up = false;
 				down = false;
 			}
-			if (Input.GetKey("w") && up == true)
+			else if (Input.GetKey("w") && up == true && PLz - PPreZ < 1)
 			{ // もし、上キーが押されたら
 				PLtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 				worldAngle.y = -45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -211,7 +219,7 @@ public class moveturn : MonoBehaviour
 				right = false;
 				left = false;
 			}
-			if (Input.GetKey("s") && down == true)
+			else if (playerTurn == true && Input.GetKey("s") && down == true && PPreZ - PLz < 0.8)
 			{ // もし、下キーが押されたら
 				PLtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -221,28 +229,34 @@ public class moveturn : MonoBehaviour
 				right = false;
 				left = false;
 			}
+            else if(PPreX - PLx > 0.8 || PLx - PPreX > 1 || PPreZ - PLz > 0.8 || PLz - PPreZ > 1)
+            {
+				playerTurn = false;
+			}
 
-			if (PPreX > PLx && PPreX - PLx > 0.95)//左行った後
+			/*
+			if (PPreX > PLx && PPreX - PLx > 0.8)//左行った後
             {
 				//PPreX = PLx;
 				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
 				playerTurn = false;
-				StartCoroutine("XZahyouCoroutine");
+				//StartCoroutine("XZahyouCoroutine");
 			}
 			else if (PPreX < PLx && PLx - PPreX > 1)//右行った後
 			{
 				//PPreX = PLx;
 				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
 				playerTurn = false;
-				StartCoroutine("XZahyouCoroutine");
+				//StartCoroutine("XZahyouCoroutine");
 			}
 
-			if (PPreZ > PLz && PPreZ - PLz > 0.95)//下行った後
+			if (playerTurn && PPreZ > PLz && PPreZ - PLz > 0.8)//下行った後
 			{
 				//PPreZ = PLz;
 				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
 				playerTurn = false;
-				StartCoroutine("ZZahyouCoroutine");
+				Debug.Log("ぬ");
+				//StartCoroutine("ZZahyouCoroutine");
 				//PPreX = this.transform.position.x;
 				//PPreZ = this.transform.position.z;
 			}
@@ -251,10 +265,10 @@ public class moveturn : MonoBehaviour
 				//PPreZ = PLz;
 				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
 				playerTurn = false;
-				StartCoroutine("ZZahyouCoroutine");
+				//StartCoroutine("ZZahyouCoroutine");
 				//PPreX = this.transform.position.x;
 				//PPreZ = this.transform.position.z;
-			}
+			}*/
 		}
 		else if (playerTurn == false)
         {
@@ -265,7 +279,7 @@ public class moveturn : MonoBehaviour
 			//Debug.Log("a" + Mathf.Floor(PLx) + " " + Mathf.Floor(PLz));
 			//Debug.Log("止まったよ");
 			playerTurn = false;
-			Debug.Log(playerTurn);
+			//Debug.Log(playerTurn);
 			up = true;
 			down = true;
 			right = true;

@@ -599,12 +599,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06d8ff4370dcd845845f2ff1957b5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 1271491151}
+  turnmanager: {fileID: 1271491152}
   player: {fileID: 1797287249}
   Hantei: {fileID: 673533926}
   moveturn: {fileID: 1797287253}
   Hanteiscript: {fileID: 0}
   speed: 2
-  playerTurn: 1
+  enemyTurn: 0
   sakuteki: 0
   up: 1
   down: 1
@@ -6581,7 +6583,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a623a2d587025044688078d3ef32117d, type: 2}
+  - {fileID: 2100000, guid: 711f29b857f26254f881c841e24316b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8332,6 +8334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 0}
+  turnmanager: {fileID: 0}
   enemy: {fileID: 42625192}
   enemyhantei: {fileID: 0}
   enemy2: {fileID: 0}
@@ -11953,7 +11957,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a623a2d587025044688078d3ef32117d, type: 2}
+  - {fileID: 2100000, guid: 711f29b857f26254f881c841e24316b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12250,6 +12254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 0}
+  turnmanager: {fileID: 0}
   enemy: {fileID: 0}
   enemyhantei: {fileID: 0}
   enemy2: {fileID: 0}
@@ -12435,12 +12441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06d8ff4370dcd845845f2ff1957b5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 0}
+  turnmanager: {fileID: 0}
   player: {fileID: 1797287249}
   Hantei: {fileID: 563469220}
   moveturn: {fileID: 1797287253}
   Hanteiscript: {fileID: 0}
   speed: 2
-  playerTurn: 1
+  enemyTurn: 0
   sakuteki: 0
   up: 1
   down: 1
@@ -13106,6 +13114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 0}
+  turnmanager: {fileID: 0}
   enemy: {fileID: 42625192}
   enemyhantei: {fileID: 0}
   enemy2: {fileID: 0}
@@ -13625,6 +13635,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270373150}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1271491151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271491153}
+  - component: {fileID: 1271491152}
+  m_Layer: 0
+  m_Name: TurnManagar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1271491152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271491151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bbf54149683cd458ddf2b3606c7435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1797287249}
+  moveturn: {fileID: 1797287253}
+  enemy: {fileID: 42625192}
+  enemymove: {fileID: 42625193}
+  PEnd: 0
+  EEnd: 0
+--- !u!4 &1271491153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271491151}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.15, y: 0, z: 4.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1278009071
 GameObject:
   m_ObjectHideFlags: 0
@@ -16506,7 +16566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1545788898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16519,12 +16579,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06d8ff4370dcd845845f2ff1957b5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 0}
+  turnmanager: {fileID: 0}
   player: {fileID: 1797287249}
   Hantei: {fileID: 0}
   moveturn: {fileID: 1797287253}
   Hanteiscript: {fileID: 0}
   speed: 2
-  playerTurn: 1
+  enemyTurn: 0
   sakuteki: 0
   up: 1
   down: 1
@@ -17453,6 +17515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 0}
+  turnmanager: {fileID: 0}
   enemy: {fileID: 42625192}
   enemyhantei: {fileID: 0}
   enemy2: {fileID: 0}
@@ -18716,7 +18780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19258,6 +19322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 1271491151}
+  turnmanager: {fileID: 1271491152}
   enemy: {fileID: 42625192}
   enemyhantei: {fileID: 1205420850}
   enemy2: {fileID: 1545788897}
@@ -19266,7 +19332,7 @@ MonoBehaviour:
   enemymove2: {fileID: 1545788898}
   playerTurn: 1
   PPreX: 2
-  PPreZ: 0
+  PPreZ: 6
   up: 1
   down: 1
   right: 1
@@ -23117,6 +23183,7 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1563336399}
   - {fileID: 1199703001}
+  - {fileID: 1271491153}
   - {fileID: 1380146672}
   - {fileID: 1751256940}
   - {fileID: 1213832789}
