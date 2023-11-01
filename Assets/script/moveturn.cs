@@ -13,15 +13,12 @@ public class moveturn : MonoBehaviour
 	public GameObject TurnManagar; //オブジェクト読み込み
 	public TurnManager turnmanager ; //オブジェクト読み込み
 	public GameObject enemy; //オブジェクト読み込み
-	public enemymove enemymove;
 	public GameObject enemyhantei; //オブジェクト読み込み
 	public GameObject enemy2; //オブジェクト読み込み
+	public GameObject enemy2hantei; //オブジェクト読み込み
+	public enemymove enemymove;
 	public enemymove enemymove2;
-	public GameObject enemyhantei2; //オブジェクト読み込み
-	public GameObject enemy3; //オブジェクト読み込み
-	public enemymove enemymove3;
-	public GameObject enemyhantei3; //オブジェクト読み込み
-								   //public float speed = 2; // スピード：Inspectorで指定
+	//public float speed = 2; // スピード：Inspectorで指定
 
 	public bool playerTurn;
 
@@ -140,9 +137,6 @@ public class moveturn : MonoBehaviour
 			enemymove.sakuteki = false;
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
-			enemyhantei2.SetActive(true);
-			enemymove3.sakuteki = false;
-			enemyhantei3.SetActive(true);
 			Debug.Log("Enter SafeZone");
 		}
 		else if (other.gameObject.name == "Red")
@@ -151,9 +145,6 @@ public class moveturn : MonoBehaviour
 			enemymove.sakuteki = false;
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
-			enemyhantei2.SetActive(true);
-			enemymove3.sakuteki = false;
-			enemyhantei3.SetActive(true);
 			Debug.Log("Enter SafeZone");
 		}
 		else if (other.gameObject.name == "Blue")
@@ -162,9 +153,6 @@ public class moveturn : MonoBehaviour
 			enemymove.sakuteki = false;
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
-			enemyhantei2.SetActive(true);
-			enemymove3.sakuteki = false;
-			enemyhantei3.SetActive(true);
 			Debug.Log("Enter SafeZone");
 		}
 		else if (other.gameObject.name == "Hantei")
@@ -172,20 +160,9 @@ public class moveturn : MonoBehaviour
 			Debug.Log("見つかった!");
 			enemymove.sakuteki = true;
 			enemyhantei.SetActive(false);   // 無効にする
-		}
-		else if (other.gameObject.name == "Hantei2")
-		{
-			Debug.Log("見つかった!");
 			enemymove2.sakuteki = true;
-			enemyhantei2.SetActive(false);   // 無効にする
 		}
-		else if (other.gameObject.name == "Hantei3")
-		{
-			Debug.Log("見つかった!");
-			enemymove3.sakuteki = true;
-			enemyhantei3.SetActive(false);   // 無効にする
-		}
-		else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
+		else if (other.gameObject.name == "OutZone")
 		{
 			Debug.Log("GameOver");
 			FadeManager.Instance.LoadScene("GameOver", 1.0f);

@@ -8,10 +8,6 @@ public class TurnManager : MonoBehaviour
     public moveturn moveturn; //スクリプト読み込み
     public GameObject enemy; //オブジェクト読み込み
     public enemymove enemymove;
-    public GameObject enemy2; //オブジェクト読み込み
-    public enemymove enemymove2;
-    public GameObject enemy3; //オブジェクト読み込み
-    public enemymove enemymove3;
 
     public bool PEnd;
     public bool EEnd;
@@ -33,8 +29,6 @@ public class TurnManager : MonoBehaviour
         moveturn.PPreZ = Mathf.Floor(player.transform.position.z);
         player.transform.position = new Vector3(Mathf.Floor(moveturn.PPreX), player.transform.position.y, Mathf.Floor(moveturn.PPreZ));
         enemymove.enemyTurn = true;
-        enemymove2.enemyTurn = true;
-        enemymove3.enemyTurn = true;
         PEnd = false;
         EEnd = true;
     }
@@ -52,15 +46,7 @@ public class TurnManager : MonoBehaviour
         //Debug.Log("ターンエンド！");
         enemymove.PreX = Mathf.Floor(enemy.transform.position.x);
         enemymove.PreZ = Mathf.Floor(enemy.transform.position.z);
-        enemymove2.PreX = Mathf.Floor(enemy.transform.position.x);
-        enemymove2.PreZ = Mathf.Floor(enemy.transform.position.z);
-        enemymove3.PreX = Mathf.Floor(enemy.transform.position.x);
-        enemymove3.PreZ = Mathf.Floor(enemy.transform.position.z);
-        /*
         enemy.transform.position = new Vector3(Mathf.Floor(enemymove.PreX), 0, Mathf.Floor(enemymove.PreZ));
-        enemy2.transform.position = new Vector3(Mathf.Floor(enemymove2.PreX), 0, Mathf.Floor(enemymove2.PreZ));
-        enemy3.transform.position = new Vector3(Mathf.Floor(enemymove3.PreX), 0, Mathf.Floor(enemymove3.PreZ));
-        */
         moveturn.playerTurn = true;
         PEnd = true;
         EEnd = false;
