@@ -33,9 +33,6 @@ public class moveturn : MonoBehaviour
 	public bool left = true;
 	private Vector3 latestPos;  //前回のPosition
 
-	float dph = Input.GetAxis("D_Pad_H");
-	float dpv = Input.GetAxis("D_Pad_V");
-
 	void Start()
 	{
 		controller_ = new Controller();
@@ -210,16 +207,12 @@ public class moveturn : MonoBehaviour
 		var PLz = this.transform.position.z;
 		PLtransform.position = pos;  // 座標を設定
 									 //Vector3 posi = this.transform.position;//ローカル座標(moveturnがアタッチされているオブジェクトの座標)を取得
-		float dph = Input.GetAxis("D_Pad_H");
-		float dpv = Input.GetAxis("D_Pad_V");
-
-		//var gamepad = xbo.current;
-
+		
 		if (playerTurn)
 		{
 			//Debug.Log("行くぜ！");
 			//Debug.Log(playerTurn);
-			if (dph > 0 && right == true && PLx - PPreX < 1)
+			if (Input.GetKey("d") && right == true && PLx - PPreX < 1)
 			{ // もし、右キーが押されたら
 				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 				//Debug.Log("今:" + PLx + " " + "前:" + PPreX);
@@ -229,7 +222,7 @@ public class moveturn : MonoBehaviour
 				up = false;
 				down = false;
 			}
-			else if (dph < 0 && left == true && PPreX - PLx < 0.9)
+			else if (Input.GetKey("a") && left == true && PPreX - PLx < 0.9)
 			{ // もし、左キーが押されたら
 				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -239,7 +232,7 @@ public class moveturn : MonoBehaviour
 				up = false;
 				down = false;
 			}
-			else if (dpv > 0 && up == true && PLz - PPreZ < 1)
+			else if (Input.GetKey("w") && up == true && PLz - PPreZ < 1)
 			{ // もし、上キーが押されたら
 				PLtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 				worldAngle.y = -45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -249,7 +242,7 @@ public class moveturn : MonoBehaviour
 				right = false;
 				left = false;
 			}
-			else if (dpv < 0 && down == true && PPreZ - PLz < 0.9)
+			else if (Input.GetKey("s") && down == true && PPreZ - PLz < 0.9)
 			{ // もし、下キーが押されたら
 				PLtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
