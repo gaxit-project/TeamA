@@ -1466,6 +1466,7 @@ MonoBehaviour:
   pauseButton: {fileID: 2002951848}
   pausePanel: {fileID: 1751068906}
   resumeButton: {fileID: 996031567}
+  menu: 1
 --- !u!114 &760694415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,7 +2805,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.499
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
