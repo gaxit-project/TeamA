@@ -7885,7 +7885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &491716332
 Transform:
   m_ObjectHideFlags: 0
@@ -9655,7 +9655,7 @@ Transform:
   m_GameObject: {fileID: 644306189}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 10.03, z: 7.019999}
+  m_LocalPosition: {x: 11, y: 10.03, z: 7.019999}
   m_LocalScale: {x: -1, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9689,7 +9689,7 @@ Transform:
   m_GameObject: {fileID: 652295820}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 5, z: -40}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11589,7 +11589,7 @@ MonoBehaviour:
   enemyhantei2: {fileID: 1379445250}
   enemy3: {fileID: 930072364}
   enemymove3: {fileID: 930072365}
-  enemyhantei3: {fileID: 930072364}
+  enemyhantei3: {fileID: 0}
   playerTurn: 1
   PPreX: 2
   PPreZ: 0
@@ -11699,7 +11699,7 @@ Transform:
   m_GameObject: {fileID: 746501810}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: 5, z: -50}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11733,7 +11733,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746501810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14856,7 +14856,7 @@ Transform:
   m_GameObject: {fileID: 965003918}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: 5, z: -40}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15556,7 +15556,7 @@ Transform:
   m_GameObject: {fileID: 994880968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: 5, z: -40}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21719,7 +21719,7 @@ Transform:
   m_GameObject: {fileID: 1379241460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: 5, z: -60}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21753,7 +21753,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379241460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -22013,7 +22013,7 @@ Transform:
   m_GameObject: {fileID: 1381681952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 5, z: -60}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22047,7 +22047,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381681952}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -24344,7 +24344,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f75b7dfcc84c82b4bb3be3982913f96b, type: 2}
+  - {fileID: 2100000, guid: 3ebc2709490450748977c24d479a8845, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25688,7 +25688,7 @@ Transform:
   m_GameObject: {fileID: 1666624491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 5, z: -60}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25722,7 +25722,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666624491}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -26829,7 +26829,7 @@ Transform:
   m_GameObject: {fileID: 1734131995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 5, z: -60}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26863,7 +26863,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734131995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -29884,7 +29884,7 @@ Transform:
   m_GameObject: {fileID: 1977093493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: 5, z: -60}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29918,7 +29918,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977093493}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -30680,7 +30680,7 @@ Transform:
   m_GameObject: {fileID: 2049001765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 5, z: -50}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30714,7 +30714,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049001765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -31135,7 +31135,7 @@ Transform:
   m_GameObject: {fileID: 2071202659}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: 5, z: -40}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32710,11 +32710,11 @@ SceneRoots:
   - {fileID: 1629865266}
   - {fileID: 931213478}
   - {fileID: 1549417831}
-  - {fileID: 491716332}
-  - {fileID: 247588514}
-  - {fileID: 930072369}
-  - {fileID: 1306920029}
   - {fileID: 1186075376}
+  - {fileID: 491716332}
+  - {fileID: 930072369}
+  - {fileID: 247588514}
+  - {fileID: 1306920029}
   - {fileID: 978961894}
   - {fileID: 87945309}
   - {fileID: 584831417}
