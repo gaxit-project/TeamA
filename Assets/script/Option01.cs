@@ -9,7 +9,30 @@ public class Option01 : MonoBehaviour
         FadeManager.Instance.LoadScene("Title", 1.0f);
     }
 
+    public void Next()
+    {
+        FadeManager.Instance.LoadScene("Map Tsujino", 1.0f);
+    }
 
+    public void Next2()
+    {
+        FadeManager.Instance.LoadScene("Map Kanda", 1.0f);
+    }
+
+    public void Re1()
+    {
+        FadeManager.Instance.LoadScene("tutorial", 1.0f);
+    }
+
+    public void Re2()
+    {
+        FadeManager.Instance.LoadScene("Map Tsujino", 1.0f);
+    }
+
+    public void Re3()
+    {
+        FadeManager.Instance.LoadScene("Map Kanda", 1.0f);
+    }
 
 
     public void Exit()

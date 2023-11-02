@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7878,7 +7878,7 @@ GameObject:
   - component: {fileID: 491716336}
   - component: {fileID: 491716335}
   - component: {fileID: 491716334}
-  - component: {fileID: 491716333}
+  - component: {fileID: 491716337}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -7904,33 +7904,6 @@ Transform:
   - {fileID: 1379445251}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &491716333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491716331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06d8ff4370dcd845845f2ff1957b5bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 695980810}
-  turnmanager: {fileID: 695980811}
-  player: {fileID: 743113484}
-  Hantei: {fileID: 1169738998}
-  moveturn: {fileID: 743113485}
-  Hanteiscript: {fileID: 0}
-  speed: 2
-  enemyTurn: 0
-  sakuteki: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
-  PreX: 8
-  PreZ: 8
 --- !u!65 &491716334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8002,6 +7975,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491716331}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &491716337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491716331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9780d6e5407d07c4fb4467ed70c98061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 695980810}
+  turnmanager: {fileID: 695980813}
+  player: {fileID: 743113484}
+  Hantei: {fileID: 1379445250}
+  moveturn: {fileID: 743113492}
+  Hanteiscript: {fileID: 0}
+  speed: 2
+  enemyTurn: 0
+  sakuteki: 0
+  up: 1
+  down: 1
+  right: 1
+  left: 1
+  PreX: 8
+  PreZ: 8
 --- !u!1 &496009424
 GameObject:
   m_ObjectHideFlags: 0
@@ -10231,63 +10231,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675576975}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &676043568
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 130190, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_Name
-      value: FadeManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
 --- !u!1 &677875338
 GameObject:
   m_ObjectHideFlags: 0
@@ -10509,7 +10452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695980812}
-  - component: {fileID: 695980811}
+  - component: {fileID: 695980813}
   m_Layer: 0
   m_Name: TurnManagar
   m_TagString: Untagged
@@ -10517,28 +10460,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &695980811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695980810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10bbf54149683cd458ddf2b3606c7435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 743113484}
-  moveturn: {fileID: 743113485}
-  enemy: {fileID: 1186075371}
-  enemymove: {fileID: 1186075372}
-  enemy2: {fileID: 491716331}
-  enemymove2: {fileID: 491716333}
-  enemy3: {fileID: 930072364}
-  enemymove3: {fileID: 930072365}
-  PEnd: 0
-  EEnd: 0
 --- !u!4 &695980812
 Transform:
   m_ObjectHideFlags: 0
@@ -10554,6 +10475,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695980813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695980810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec792117df960a478d86494271509a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 743113484}
+  moveturn: {fileID: 743113492}
+  enemy: {fileID: 1186075371}
+  enemymove: {fileID: 1186075377}
+  enemy2: {fileID: 491716331}
+  enemymove2: {fileID: 491716337}
+  enemy3: {fileID: 930072364}
+  enemymove3: {fileID: 930072370}
+  PEnd: 0
+  EEnd: 0
 --- !u!1 &699623188
 GameObject:
   m_ObjectHideFlags: 0
@@ -10882,24 +10825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 0}
-  turnmanager: {fileID: 0}
-  enemy: {fileID: 0}
-  enemymove: {fileID: 0}
-  enemyhantei: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemymove2: {fileID: 0}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 1
-  PPreX: 0
-  PPreZ: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!4 &727660524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400094, guid: d23a933ad7c7a4967a4adbb99c21d830, type: 3}
@@ -11567,36 +11492,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
   m_PrefabInstance: {fileID: 2141564860}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &743113485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743113484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 695980810}
-  turnmanager: {fileID: 695980811}
-  enemy: {fileID: 1186075371}
-  enemymove: {fileID: 1186075372}
-  enemyhantei: {fileID: 1991476023}
-  enemy2: {fileID: 491716331}
-  enemymove2: {fileID: 491716333}
-  enemyhantei2: {fileID: 1379445250}
-  enemy3: {fileID: 930072364}
-  enemymove3: {fileID: 930072365}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 1
-  PPreX: 2
-  PPreZ: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!95 &743113486
 Animator:
   serializedVersion: 5
@@ -11671,6 +11566,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
   m_PrefabInstance: {fileID: 2141564860}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &743113492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743113484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb9bf8bf93998f4999a3ef3026f266e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 695980810}
+  turnmanager: {fileID: 695980813}
+  enemy: {fileID: 1186075371}
+  enemymove: {fileID: 1186075377}
+  enemyhantei: {fileID: 1991476023}
+  enemy2: {fileID: 491716331}
+  enemymove2: {fileID: 491716337}
+  enemyhantei2: {fileID: 1379445250}
+  enemy3: {fileID: 930072364}
+  enemymove3: {fileID: 930072370}
+  enemyhantei3: {fileID: 0}
+  playerTurn: 0
+  PPreX: 2
+  PPreZ: 0
+  up: 1
+  down: 1
+  right: 1
+  left: 1
 --- !u!1 &746501810
 GameObject:
   m_ObjectHideFlags: 0
@@ -14419,7 +14344,7 @@ GameObject:
   - component: {fileID: 930072368}
   - component: {fileID: 930072367}
   - component: {fileID: 930072366}
-  - component: {fileID: 930072365}
+  - component: {fileID: 930072370}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -14427,33 +14352,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &930072365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930072364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06d8ff4370dcd845845f2ff1957b5bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 0}
-  turnmanager: {fileID: 0}
-  player: {fileID: 743113484}
-  Hantei: {fileID: 0}
-  moveturn: {fileID: 743113485}
-  Hanteiscript: {fileID: 0}
-  speed: 2
-  enemyTurn: 0
-  sakuteki: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
-  PreX: 9
-  PreZ: 4
 --- !u!65 &930072366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14551,6 +14449,33 @@ Transform:
   - {fileID: 2146172981}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &930072370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930072364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9780d6e5407d07c4fb4467ed70c98061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 695980810}
+  turnmanager: {fileID: 695980813}
+  player: {fileID: 743113484}
+  Hantei: {fileID: 1991476023}
+  moveturn: {fileID: 743113492}
+  Hanteiscript: {fileID: 0}
+  speed: 2
+  enemyTurn: 0
+  sakuteki: 0
+  up: 1
+  down: 1
+  right: 1
+  left: 1
+  PreX: 9
+  PreZ: 4
 --- !u!1 &930386260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
@@ -14589,24 +14514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 0}
-  turnmanager: {fileID: 0}
-  enemy: {fileID: 247588509}
-  enemymove: {fileID: 0}
-  enemyhantei: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemymove2: {fileID: 0}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 1
-  PPreX: 2
-  PPreZ: 6
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!54 &930386263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17768,24 +17675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 0}
-  turnmanager: {fileID: 0}
-  enemy: {fileID: 0}
-  enemymove: {fileID: 0}
-  enemyhantei: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemymove2: {fileID: 0}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 1
-  PPreX: 0
-  PPreZ: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!1 &1126749218
 GameObject:
   m_ObjectHideFlags: 0
@@ -18657,7 +18546,7 @@ GameObject:
   - component: {fileID: 1186075375}
   - component: {fileID: 1186075374}
   - component: {fileID: 1186075373}
-  - component: {fileID: 1186075372}
+  - component: {fileID: 1186075377}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -18665,33 +18554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1186075372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186075371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06d8ff4370dcd845845f2ff1957b5bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 695980810}
-  turnmanager: {fileID: 695980811}
-  player: {fileID: 743113484}
-  Hantei: {fileID: 336636474}
-  moveturn: {fileID: 743113485}
-  Hanteiscript: {fileID: 0}
-  speed: 2
-  enemyTurn: 0
-  sakuteki: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
-  PreX: 3
-  PreZ: 4
 --- !u!65 &1186075373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18781,6 +18643,33 @@ Transform:
   - {fileID: 1991476024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1186075377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186075371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9780d6e5407d07c4fb4467ed70c98061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 695980810}
+  turnmanager: {fileID: 695980813}
+  player: {fileID: 743113484}
+  Hantei: {fileID: 1991476023}
+  moveturn: {fileID: 743113492}
+  Hanteiscript: {fileID: 0}
+  speed: 2
+  enemyTurn: 0
+  sakuteki: 0
+  up: 1
+  down: 1
+  right: 1
+  left: 1
+  PreX: 3
+  PreZ: 4
 --- !u!1 &1187319451
 GameObject:
   m_ObjectHideFlags: 0
@@ -19981,24 +19870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 0}
-  turnmanager: {fileID: 0}
-  enemy: {fileID: 247588509}
-  enemymove: {fileID: 247588510}
-  enemyhantei: {fileID: 2048467925}
-  enemy2: {fileID: 1306920024}
-  enemymove2: {fileID: 1306920025}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 1
-  PPreX: 2
-  PPreZ: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!54 &1276711873
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25368,24 +25239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 0}
-  turnmanager: {fileID: 0}
-  enemy: {fileID: 0}
-  enemymove: {fileID: 0}
-  enemyhantei: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemymove2: {fileID: 0}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 0
-  PPreX: 0
-  PPreZ: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!65 &1633953084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32073,6 +31926,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120259278}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2122291957
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 130190, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_Name
+      value: FadeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
 --- !u!1 &2132766904
 GameObject:
   m_ObjectHideFlags: 0
@@ -32393,7 +32303,7 @@ PrefabInstance:
       addedObject: {fileID: 743113488}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 743113485}
+      addedObject: {fileID: 743113492}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
       insertIndex: -1
       addedObject: {fileID: 743113487}
@@ -32616,7 +32526,7 @@ Transform:
   m_GameObject: {fileID: 2146684134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 5, z: -40}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 8, y: 10, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32698,10 +32608,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 963194228}
-  - {fileID: 676043568}
   - {fileID: 705507995}
   - {fileID: 1563336399}
   - {fileID: 695980812}
+  - {fileID: 2122291957}
   - {fileID: 1380146672}
   - {fileID: 1491168035}
   - {fileID: 2141564860}

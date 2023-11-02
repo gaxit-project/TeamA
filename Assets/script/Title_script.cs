@@ -12,7 +12,7 @@ public class Title_script : MonoBehaviour
 
     public void Start_menu()
     {
-        FadeManager.Instance.LoadScene("Map Kanda", 2.0f);
+        FadeManager.Instance.LoadScene("tutorial", 1.0f);
     }
 
     public void Exit_menu()
