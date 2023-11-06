@@ -33,8 +33,8 @@ public class moveturn : MonoBehaviour
 	public bool left = true;
 	private Vector3 latestPos;  //前回のPosition
 
-	float dph = Input.GetAxis("D_Pad_H");
-	float dpv = Input.GetAxis("D_Pad_V");
+	//float dph = Input.GetAxis("D_Pad_H");
+	//float dpv = Input.GetAxis("D_Pad_V");
 
 	void Start()
 	{
