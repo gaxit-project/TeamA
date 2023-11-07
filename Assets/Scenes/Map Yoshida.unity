@@ -24327,14 +24327,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnManagar: {fileID: 2029875473}
   turnmanager: {fileID: 2029875474}
-  enemy: {fileID: 0}
-  enemymove: {fileID: 0}
-  enemyhantei: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemymove2: {fileID: 0}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
+  enemy: {fileID: 1667341584}
+  enemymove: {fileID: 1667341585}
+  enemyhantei: {fileID: 89257546}
+  enemy2: {fileID: 1555243674}
+  enemymove2: {fileID: 1555243675}
+  enemyhantei2: {fileID: 35243328}
+  enemy3: {fileID: 589076724}
+  enemymove3: {fileID: 589076725}
   enemyhantei3: {fileID: 0}
   playerTurn: 0
   PPreX: 0
@@ -29158,7 +29158,7 @@ MonoBehaviour:
   TurnManagar: {fileID: 2029875473}
   turnmanager: {fileID: 2029875474}
   player: {fileID: 1361011043}
-  Hantei: {fileID: 1390786630}
+  Hantei: {fileID: 35243328}
   moveturn: {fileID: 1361011049}
   Hanteiscript: {fileID: 0}
   speed: 2
@@ -31994,7 +31994,7 @@ MonoBehaviour:
   TurnManagar: {fileID: 2029875473}
   turnmanager: {fileID: 2029875474}
   player: {fileID: 1361011043}
-  Hantei: {fileID: 1784860954}
+  Hantei: {fileID: 89257546}
   moveturn: {fileID: 1361011049}
   Hanteiscript: {fileID: 0}
   speed: 2
@@ -41055,14 +41055,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bbf54149683cd458ddf2b3606c7435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveturn: {fileID: 0}
-  enemy: {fileID: 0}
-  enemymove: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemymove2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemymove3: {fileID: 0}
+  player: {fileID: 1361011043}
+  moveturn: {fileID: 1361011049}
+  enemy: {fileID: 1667341584}
+  enemymove: {fileID: 1667341585}
+  enemy2: {fileID: 1555243674}
+  enemymove2: {fileID: 1555243675}
+  enemy3: {fileID: 589076724}
+  enemymove3: {fileID: 589076725}
   PEnd: 0
   EEnd: 0
 --- !u!4 &2029875475
