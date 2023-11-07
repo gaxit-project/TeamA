@@ -134,9 +134,8 @@ public class moveturn : MonoBehaviour
 
 		private void OnTriggerStay(Collider other)
 	{
-		if (other.gameObject.name == "Yellow")
+		if (other.gameObject.name == "Yellow" && gameObject.name == "Yellow_Player")
 		{
-			GetComponent<Renderer>().material.color = Color.yellow;
 			enemymove.sakuteki = false;
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
@@ -145,9 +144,8 @@ public class moveturn : MonoBehaviour
 			enemyhantei3.SetActive(true);
 			Debug.Log("Enter SafeZone");
 		}
-		else if (other.gameObject.name == "Red")
+		else if (other.gameObject.name == "Red" && gameObject.name == "Red_Player")
         {
-			GetComponent<Renderer>().material.color = Color.red;
 			enemymove.sakuteki = false;
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
@@ -156,9 +154,8 @@ public class moveturn : MonoBehaviour
 			enemyhantei3.SetActive(true);
 			Debug.Log("Enter SafeZone");
 		}
-		else if (other.gameObject.name == "Blue")
+		else if (other.gameObject.name == "Blue" && gameObject.name == "Blue_Player")
 		{
-			GetComponent<Renderer>().material.color = Color.blue;
 			enemymove.sakuteki = false;
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
