@@ -135,7 +135,7 @@ public class moveturn : MonoBehaviour
 		//pl
 	}
 
-		private void OnTriggerStay(Collider other)
+		/*private void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.name == "Yellow")
 		{
@@ -144,7 +144,7 @@ public class moveturn : MonoBehaviour
 			enemyhantei.SetActive(true);
 			enemymove2.sakuteki = false;
 			enemyhantei2.SetActive(true);
-			enemymove3.sakuteki = false;
+		    enemymove3.sakuteki = false;
 			enemyhantei3.SetActive(true);
 			Debug.Log("Enter SafeZone");
 		}
@@ -198,7 +198,7 @@ public class moveturn : MonoBehaviour
 			Debug.Log("GameClear");
 			FadeManager.Instance.LoadScene("GameClear", 1.0f);
 		}
-	}
+	}*/
 
 	void Update()
 	{ // ずっと行う

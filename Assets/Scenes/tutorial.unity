@@ -16177,6 +16177,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1797287261}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1797287262}
   m_SourcePrefab: {fileID: 100100000, guid: 0e460a452cdd8a8469cd15557a745881, type: 3}
 --- !u!1 &1753229602
 GameObject:
@@ -16751,6 +16754,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1797287262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797287249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c731ef90c5b9945439d3273a980de483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 1271491151}
+  turnmanager: {fileID: 1271491152}
+  enemy: {fileID: 42625192}
+  enemymove: {fileID: 42625193}
+  enemyhantei: {fileID: 1205420850}
+  enemy2: {fileID: 1545788897}
+  enemymove2: {fileID: 1545788898}
+  enemyhantei2: {fileID: 0}
+  enemy3: {fileID: 0}
+  enemymove3: {fileID: 0}
+  enemyhantei3: {fileID: 0}
 --- !u!1 &1799184913
 GameObject:
   m_ObjectHideFlags: 0
