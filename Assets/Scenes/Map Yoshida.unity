@@ -4309,7 +4309,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4374,7 +4374,7 @@ Transform:
   m_GameObject: {fileID: 184817305}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.79465294, z: 1}
+  m_LocalPosition: {x: 3, y: 0.79465294, z: 4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11728,7 +11728,7 @@ MonoBehaviour:
   turnmanager: {fileID: 2029875474}
   player: {fileID: 656577102}
   Hantei: {fileID: 0}
-  moveturn: {fileID: 656577104}
+  moveturn: {fileID: 656577110}
   Hanteiscript: {fileID: 0}
   speed: 2
   enemyTurn: 1
@@ -13417,36 +13417,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
   m_PrefabInstance: {fileID: 1093459749}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &656577104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656577102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1dcdde3b6a63a4b811f5e55f31ce41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurnManagar: {fileID: 2029875473}
-  turnmanager: {fileID: 2029875474}
-  enemy: {fileID: 1667341584}
-  enemymove: {fileID: 1667341585}
-  enemyhantei: {fileID: 89257546}
-  enemy2: {fileID: 1555243674}
-  enemymove2: {fileID: 1555243675}
-  enemyhantei2: {fileID: 35243328}
-  enemy3: {fileID: 589076724}
-  enemymove3: {fileID: 589076725}
-  enemyhantei3: {fileID: 0}
-  playerTurn: 0
-  PPreX: 0
-  PPreZ: 0
-  up: 1
-  down: 1
-  right: 1
-  left: 1
 --- !u!114 &656577105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13533,6 +13503,57 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &656577109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656577102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057bd437e34a1e744b97cf895ed6c2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1667341584}
+  enemymove: {fileID: 1667341585}
+  enemyhantei: {fileID: 89257546}
+  enemy2: {fileID: 1555243674}
+  enemymove2: {fileID: 1555243675}
+  enemyhantei2: {fileID: 35243328}
+  enemy3: {fileID: 589076724}
+  enemymove3: {fileID: 589076725}
+  enemyhantei3: {fileID: 0}
+--- !u!114 &656577110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656577102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee742fc6ff7194f499c6487fa4af654c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnManagar: {fileID: 2029875473}
+  turnmanager: {fileID: 2029875474}
+  enemy: {fileID: 1667341584}
+  enemymove: {fileID: 1667341585}
+  enemyhantei: {fileID: 89257546}
+  enemy2: {fileID: 1555243674}
+  enemymove2: {fileID: 1555243675}
+  enemyhantei2: {fileID: 35243328}
+  enemy3: {fileID: 589076724}
+  enemymove3: {fileID: 589076725}
+  enemyhantei3: {fileID: 0}
+  playerTurn: 0
+  PPreX: 1
+  PPreZ: 0
+  up: 1
+  down: 1
+  right: 1
+  left: 1
 --- !u!1 &671384883
 GameObject:
   m_ObjectHideFlags: 0
@@ -14747,7 +14768,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -14812,7 +14833,7 @@ Transform:
   m_GameObject: {fileID: 745939397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.79465294, z: 1}
+  m_LocalPosition: {x: 7, y: 0.79465294, z: 4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20310,8 +20331,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1778311598}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20387,7 +20420,10 @@ PrefabInstance:
       addedObject: {fileID: 656577105}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 656577104}
+      addedObject: {fileID: 656577110}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 656577109}
   m_SourcePrefab: {fileID: 100100000, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
 --- !u!1 &1095957019
 GameObject:
@@ -23912,7 +23948,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -23977,7 +24013,7 @@ Transform:
   m_GameObject: {fileID: 1301309401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.79465294, z: 1}
+  m_LocalPosition: {x: 0, y: 0.79465294, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29348,7 +29384,7 @@ MonoBehaviour:
   turnmanager: {fileID: 2029875474}
   player: {fileID: 656577102}
   Hantei: {fileID: 35243328}
-  moveturn: {fileID: 656577104}
+  moveturn: {fileID: 656577110}
   Hanteiscript: {fileID: 0}
   speed: 2
   enemyTurn: 0
@@ -32184,7 +32220,7 @@ MonoBehaviour:
   turnmanager: {fileID: 2029875474}
   player: {fileID: 656577102}
   Hantei: {fileID: 89257546}
-  moveturn: {fileID: 656577104}
+  moveturn: {fileID: 656577110}
   Hanteiscript: {fileID: 0}
   speed: 2
   enemyTurn: 1
@@ -35857,7 +35893,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -35922,7 +35958,7 @@ Transform:
   m_GameObject: {fileID: 1796593840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.79465294, z: 1}
+  m_LocalPosition: {x: 11, y: 0.79465294, z: 3}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40354,6 +40390,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987524749}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1990880635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990880639}
+  - component: {fileID: 1990880638}
+  - component: {fileID: 1990880637}
+  - component: {fileID: 1990880636}
+  m_Layer: 0
+  m_Name: Red_Change
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1990880636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990880635}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1990880637
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990880635}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bc85febc59d5a544dbbca12f734bb169, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1990880638
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990880635}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1990880639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990880635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 0.79465294, z: 11}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997899627
 GameObject:
   m_ObjectHideFlags: 0
@@ -41350,7 +41491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 656577102}
-  moveturn: {fileID: 656577104}
+  moveturn: {fileID: 0}
   enemy: {fileID: 1667341584}
   enemymove: {fileID: 1667341585}
   enemy2: {fileID: 1555243674}
@@ -43452,5 +43593,6 @@ SceneRoots:
   - {fileID: 588730804}
   - {fileID: 184817309}
   - {fileID: 745939401}
+  - {fileID: 1990880639}
   - {fileID: 1796593844}
   - {fileID: 1301309405}
