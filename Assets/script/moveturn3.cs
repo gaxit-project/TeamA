@@ -122,7 +122,7 @@ public class moveturn3 : MonoBehaviour
         //PPreZ = this.transform.position.z;
     }
 
-    IEnumerator PosKakuteiCoroutine()
+    /*IEnumerator PosKakuteiCoroutine()
     {
         //‚±‚±‚Éˆ—‚ğ‘‚­
         //Debug.Log("C³’†");
@@ -199,7 +199,7 @@ public class moveturn3 : MonoBehaviour
             Debug.Log("GameClear");
             SceneManager.LoadScene("GameClear3");
         }
-    }
+    }*/
 
     void Update()
     { // ‚¸‚Á‚Æs‚¤
