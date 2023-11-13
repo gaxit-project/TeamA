@@ -68,32 +68,6 @@ public class enemymove : MonoBehaviour
 		PreZ = this.transform.position.z;
 	}
 
-	/*
-	IEnumerator ManyEnemyCoroutine()
-	{
-		//ここに処理を書く
-		//Debug.Log("敵がうごいてる!");
-
-		//1フレーム停止
-		yield return new WaitForSeconds(0.1f);
-
-		//ここに再開後の処理を書く
-		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), 0, Mathf.Floor(this.transform.position.z));
-		enemyTurn = false;
-		PreX = this.transform.position.x;
-		PreZ = this.transform.position.z;
-	}
-	*/
-
-	/*public void Reposition()
-    {
-		Debug.Log("敵がうごいてる!");
-		ENx / Mathf.Floor = PreX;
-		enemyTurn = false;
-		PreX = this.transform.position.x;
-
-	}*/
-
 	void Update()
 	{ // ずっと行う
 		player = GameObject.Find("player"); //Updataで使うのでオブジェクト読み込み
@@ -172,10 +146,6 @@ public class enemymove : MonoBehaviour
 		}
 		else if (enemyTurn == true && sakuteki == true)
 		{
-			//Debug.Log(moveturn.transform.position + "a");
-			//Debug.Log("(" + PLx + "." + PLz + ")" + " " + "(" + ENx + "." + ENz + ")");
-			//ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
-			//StartCoroutine("EMoveCoroutine");
 			if (Mathf.Floor(moveturn.PPreX) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
 			{
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
@@ -228,71 +198,18 @@ public class enemymove : MonoBehaviour
             {
 				enemyTurn = false;
 			}
-			/*
-			if (Mathf.Floor(Mathf.Abs(PreX)) > Mathf.Floor(Mathf.Abs(ENx)))//左
-			{
-				if (Mathf.Abs(PreX) - Mathf.Abs(ENx) > 0.8)
-				{
-					Debug.Log("b");
-					enemyTurn = false;
-					//StartCoroutine("ManyEnemyCoroutine");
-					//PreX = Mathf.Floor(this.transform.position.x);
-				}
-			}
-			else if (Mathf.Floor(Mathf.Abs(PreX)) < Mathf.Floor(Mathf.Abs(ENx)))
-			{
-				if (Mathf.Abs(ENx) - Mathf.Abs(PreX) > 1.15)
-				{
-					Debug.Log("a");
-					enemyTurn = false;
-					//StartCoroutine("ManyEnemyCoroutine");
-					//PreX = Mathf.Floor(this.transform.position.x);
-				}
-			}
-			else if (Mathf.Floor(moveturn.PPreX) == Mathf.Floor(PreX))
-			{
-				if (PreZ > ENz)
-				{
-					if (PreZ - ENz > 0.8)
-					{
-						Debug.Log("a");
-						enemyTurn = false;
-						//StartCoroutine("ManyEnemyCoroutine");
-						//PreZ = Mathf.Floor(this.transform.position.z);
-					}
-				}
-				else if (PreZ < ENz)
-				{
-					if (ENz - PreZ > 1)
-					{
-						Debug.Log("a");
-						enemyTurn = false;
-						//StartCoroutine("ManyEnemyCoroutine");
-						//PreZ = Mathf.Floor(this.transform.position.z);
-					}
-				}
-			}*/
 		}
 		else if (enemyTurn == false)
 		{
-			//StopCoroutine("EMoveCoroutine");
-			//transform.position = new Vector3(Mathf.Floor(PreX), 0, Mathf.Floor(PreZ));
-			//Debug.Log("あげるわ");
-			//moveturn.playerTurn = true;
-			//PreX = this.transform.position.x;
-			//PreZ = this.transform.position.z;
 			up = true;
 			down = true;
 			right = true;
 			left = true;
-			//moveturn.PPreX = player.transform.position.x;
-			//moveturn.PPreZ = player.transform.position.z;
 		}
 
 	}
 	void FixedUpdate()
 	{ // ずっと行う（一定時間ごとに）
-	  // 移動する
-	  // this.GetComponent<SpriteRenderer>().flipX = leftFlag;
+
 	}
 }

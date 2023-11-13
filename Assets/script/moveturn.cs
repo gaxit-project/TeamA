@@ -89,7 +89,6 @@ public class moveturn : MonoBehaviour
 	{
 		//ここに処理を書く
 		//Debug.Log("修正中");
-		//PPreX = Mathf.Floor(this.transform.position.x);
 
 		//1フレーム停止
 		yield return new WaitForSeconds(0.0f);
@@ -99,7 +98,6 @@ public class moveturn : MonoBehaviour
 		Debug.Log(Mathf.Floor(this.transform.position.x) + " " + this.transform.position.y + " " + Mathf.Floor(PPreZ));
 		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, PPreZ);
 		playerTurn = false;
-		//StartCoroutine("PosKakuteiCoroutine");
 		PPreX = this.transform.position.x;
 	}
 
@@ -107,7 +105,6 @@ public class moveturn : MonoBehaviour
 	{
 		//ここに処理を書く
 		//Debug.Log("修正中");
-		//PPreZ = Mathf.Floor(this.transform.position.z);
 
 		//1フレーム停止
 		yield return new WaitForSeconds(0.0f);
@@ -117,8 +114,6 @@ public class moveturn : MonoBehaviour
 		Debug.Log(Mathf.Floor(PPreX) + " " + this.transform.position.y + " " + Mathf.Floor(this.transform.position.z));
 		transform.position = new Vector3(PPreX, this.transform.position.y, Mathf.Floor(this.transform.position.z));
 		playerTurn = false;
-		//StartCoroutine("PosKakuteiCoroutine");
-		//PPreZ = this.transform.position.z;
 	}
 
 	IEnumerator PosKakuteiCoroutine()
@@ -132,73 +127,7 @@ public class moveturn : MonoBehaviour
 		//ここに再開後の処理を書く
 		PPreX = Mathf.Floor(this.transform.position.x);
 		PPreZ = Mathf.Floor(this.transform.position.z);
-		//pl
 	}
-
-		/*private void OnTriggerStay(Collider other)
-	{
-		if (other.gameObject.name == "Yellow")
-		{
-			GetComponent<Renderer>().material.color = Color.yellow;
-			enemymove.sakuteki = false;
-			enemyhantei.SetActive(true);
-			enemymove2.sakuteki = false;
-			enemyhantei2.SetActive(true);
-		    enemymove3.sakuteki = false;
-			enemyhantei3.SetActive(true);
-			Debug.Log("Enter SafeZone");
-		}
-		else if (other.gameObject.name == "Red")
-        {
-			GetComponent<Renderer>().material.color = Color.red;
-			enemymove.sakuteki = false;
-			enemyhantei.SetActive(true);
-			enemymove2.sakuteki = false;
-			enemyhantei2.SetActive(true);
-			enemymove3.sakuteki = false;
-			enemyhantei3.SetActive(true);
-			Debug.Log("Enter SafeZone");
-		}
-		else if (other.gameObject.name == "Blue")
-		{
-			GetComponent<Renderer>().material.color = Color.blue;
-			enemymove.sakuteki = false;
-			enemyhantei.SetActive(true);
-			enemymove2.sakuteki = false;
-			enemyhantei2.SetActive(true);
-			enemymove3.sakuteki = false;
-			enemyhantei3.SetActive(true);
-			Debug.Log("Enter SafeZone");
-		}
-		else if (other.gameObject.name == "Hantei")
-		{
-			Debug.Log("見つかった!");
-			enemymove.sakuteki = true;
-			enemyhantei.SetActive(false);   // 無効にする
-		}
-		else if (other.gameObject.name == "Hantei2")
-		{
-			Debug.Log("見つかった!");
-			enemymove2.sakuteki = true;
-			enemyhantei2.SetActive(false);   // 無効にする
-		}
-		else if (other.gameObject.name == "Hantei3")
-		{
-			Debug.Log("見つかった!");
-			enemymove3.sakuteki = true;
-			enemyhantei3.SetActive(false);   // 無効にする
-		}
-		else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
-		{
-			Debug.Log("GameOver");
-			FadeManager.Instance.LoadScene("GameOver", 1.0f);
-		}
-		else if (other.gameObject.name == "ClearObject")
-		{
-			Debug.Log("GameClear");
-			FadeManager.Instance.LoadScene("GameClear", 1.0f);
-		}
-	}*/
 
 	void Update()
 	{ // ずっと行う
@@ -209,21 +138,14 @@ public class moveturn : MonoBehaviour
 		var PLx = this.transform.position.x;
 		var PLz = this.transform.position.z;
 		PLtransform.position = pos;  // 座標を設定
-									 //Vector3 posi = this.transform.position;//ローカル座標(moveturnがアタッチされているオブジェクトの座標)を取得
 		float dph = Input.GetAxis("D_Pad_H");
 		float dpv = Input.GetAxis("D_Pad_V");
 
-		//var gamepad = xbo.current;
-
 		if (playerTurn)
 		{
-			//Debug.Log("行くぜ！");
-			//Debug.Log(playerTurn);
 			if ((dph > 0 || Input.GetKey("d")) && right == true && PLx - PPreX < 1)
 			{ // もし、右キーが押されたら
 				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
-				//Debug.Log("今:" + PLx + " " + "前:" + PPreX);
-				//StartCoroutine("MoveCoroutine");
 				worldAngle.y = 45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
 				up = false;
@@ -234,8 +156,6 @@ public class moveturn : MonoBehaviour
 				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-				//Debug.Log("今:" + PLx + " " + "前:" + PPreX);
-				//StartCoroutine("MoveCoroutine");
 				up = false;
 				down = false;
 			}
@@ -254,7 +174,6 @@ public class moveturn : MonoBehaviour
 				PLtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-													  //StartCoroutine("MoveCoroutine");
 				Debug.Log("今:" + PLz + " " + "前:" + PPreZ);
 				right = false;
 				left = false;
@@ -263,58 +182,14 @@ public class moveturn : MonoBehaviour
             {
 				playerTurn = false;
 			}
-
-			/*
-			if (PPreX > PLx && PPreX - PLx > 0.8)//左行った後
-            {
-				//PPreX = PLx;
-				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
-				playerTurn = false;
-				//StartCoroutine("XZahyouCoroutine");
-			}
-			else if (PPreX < PLx && PLx - PPreX > 1)//右行った後
-			{
-				//PPreX = PLx;
-				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
-				playerTurn = false;
-				//StartCoroutine("XZahyouCoroutine");
-			}
-
-			if (playerTurn && PPreZ > PLz && PPreZ - PLz > 0.8)//下行った後
-			{
-				//PPreZ = PLz;
-				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
-				playerTurn = false;
-				Debug.Log("ぬ");
-				//StartCoroutine("ZZahyouCoroutine");
-				//PPreX = this.transform.position.x;
-				//PPreZ = this.transform.position.z;
-			}
-			else if (PPreZ < PLz && PLz - PPreZ > 1)//上行った後
-			{
-				//PPreZ = PLz;
-				//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
-				playerTurn = false;
-				//StartCoroutine("ZZahyouCoroutine");
-				//PPreX = this.transform.position.x;
-				//PPreZ = this.transform.position.z;
-			}*/
 		}
 		else if (playerTurn == false)
         {
-			//PPreX = Mathf.Floor(PLx);
-			//PPreZ = Mathf.Floor(PLz);
-			//StartCoroutine("ZahyouCoroutine");
-			//transform.position = new Vector3(Mathf.Floor(PLx), this.transform.position.y, Mathf.Floor(PLz));
-			//Debug.Log("a" + Mathf.Floor(PLx) + " " + Mathf.Floor(PLz));
-			//Debug.Log("止まったよ");
 			playerTurn = false;
-			//Debug.Log(playerTurn);
 			up = true;
 			down = true;
 			right = true;
 			left = true;
-			//gameManager.CallInoperable(0.5f); // 2 秒間　このスクリプトを無効に
 		}
 
 		if (Input.GetKey("escape"))
@@ -330,22 +205,6 @@ public class moveturn : MonoBehaviour
 	}
 	void FixedUpdate()
 	{ // ずっと行う（一定時間ごとに）
-	  // 移動する
-	  // this.GetComponent<SpriteRenderer>().flipX = leftFlag;
+
 	}
 }
-
-
-/*
-if(bool)
-{
-常に動き続けるfor文
-for(i=0; i<50; i++)
-x = x+1;
-}
-
-if(コントローラーが押された)
-{
-bool = true;
-}
-*/
