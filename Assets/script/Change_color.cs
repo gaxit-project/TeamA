@@ -26,22 +26,22 @@ public class Change_color : MonoBehaviour
 		if (other.gameObject.name == "Yellow_Change")
 		{
             node.GetComponent<Renderer>().material = Yellow;
-			gameObject.name = "Yellow_Player";
+			node.gameObject.name = "Yellow_Player";
 		}
 		else if (other.gameObject.name == "Red_Change")
 		{
             node.GetComponent<Renderer>().material = Red;
-			gameObject.name = "Red_Player";
+			node.gameObject.name = "Red_Player";
 		}
 		else if (other.gameObject.name == "Blue_Change")
 		{
             node.GetComponent<Renderer>().material = Blue;
-			gameObject.name = "Blue_Player";
+			node.gameObject.name = "Blue_Player";
 		}
 		else if (other.gameObject.name == "Normal_Change")
 		{
             node.GetComponent<Renderer>().material = Normal;
-            gameObject.name = "Normal_Player";
+            node.gameObject.name = "Normal_Player";
 
         }
 	}

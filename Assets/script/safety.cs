@@ -7,6 +7,8 @@ public class safety : MonoBehaviour
     GameObject GameManager;//Gamemanager読み込み
     GameManager gameManager;
 
+    public GameObject node; //オブジェクト読み込み
+
     public GameObject enemy; //オブジェクト読み込み
     public enemymove enemymove;
     public GameObject enemyhantei; //オブジェクト読み込み
@@ -25,7 +27,7 @@ public class safety : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "Yellow" && gameObject.name == "Yellow_Playerr") //黄色に触れて、かつ自分も黄色のとき
+        if (other.gameObject.name == "Yellow" && node.gameObject.name == "Yellow_Playerr") //黄色に触れて、かつ自分も黄色のとき
         {
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
@@ -35,7 +37,7 @@ public class safety : MonoBehaviour
             enemyhantei3.SetActive(true);
             //Debug.Log("Enter SafeZone");
         }
-        else if (other.gameObject.name == "Red" && gameObject.name == "Red_Player") //赤色に触れて、かつ自分も赤色のとき
+        else if (other.gameObject.name == "Red" && node.gameObject.name == "Red_Player") //赤色に触れて、かつ自分も赤色のとき
         {
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
@@ -45,7 +47,7 @@ public class safety : MonoBehaviour
             enemyhantei3.SetActive(true);
             //Debug.Log("Enter SafeZone");
         }
-        else if (other.gameObject.name == "Blue" && gameObject.name == "Blue_Player") //青色に触れて、かつ自分も青色のとき
+        else if (other.gameObject.name == "Blue" && node.gameObject.name == "Blue_Player") //青色に触れて、かつ自分も青色のとき
         {
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
