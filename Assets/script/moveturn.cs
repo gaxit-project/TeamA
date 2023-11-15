@@ -31,6 +31,11 @@ public class moveturn : MonoBehaviour
 	public bool down = true;
 	public bool right = true;
 	public bool left = true;
+	public bool sousaR = false;
+	public bool sousaL = false;
+	public bool sousaU = false;
+	public bool sousaD = false;
+
 	private Vector3 latestPos;  //前回のPosition
 
 	//float dph = Input.GetAxis("D_Pad_H");
@@ -143,6 +148,7 @@ public class moveturn : MonoBehaviour
 
 		if (playerTurn)
 		{
+			/*
 			if ((dph > 0 || Input.GetKey("d")) && right == true && PLx - PPreX < 1)
 			{ // もし、右キーが押されたら
 				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
@@ -178,7 +184,48 @@ public class moveturn : MonoBehaviour
 				right = false;
 				left = false;
 			}
-            else if(PPreX - PLx > 0.8 || PLx - PPreX > 1 || PPreZ - PLz > 0.8 || PLz - PPreZ > 1)
+			*/
+			if (dph > 0 && sousaR == false)
+            {
+				sousaR = true;
+				worldAngle.y = 45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
+			}
+			else if (sousaR && PLx - PPreX < 1)
+            {
+				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
+			}
+			else if (dph < 0 && sousaL == false)
+			{
+				sousaL = true;
+				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
+			}
+			else if (sousaL && PPreX - PLx < 0.9)
+			{
+				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
+			}
+			else if (dpv> 0 && sousaU == false)
+			{
+				sousaU = true;
+				worldAngle.y = -45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
+			}
+			else if (sousaU && PLz - PPreZ < 1)
+			{
+				PLtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
+			}
+			else if (dpv < 0 && sousaD == false)
+			{
+				sousaD = true;
+				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
+			}
+			else if (sousaD && PPreZ - PLz < 0.9)
+			{
+				PLtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
+			}
+			else if(PPreX - PLx > 0.8 || PLx - PPreX > 1 || PPreZ - PLz > 0.8 || PLz - PPreZ > 1)
             {
 				playerTurn = false;
 			}
@@ -190,6 +237,10 @@ public class moveturn : MonoBehaviour
 			down = true;
 			right = true;
 			left = true;
+			sousaR = false;
+			sousaL = false;
+			sousaU = false;
+			sousaD = false;
 		}
 
 		if (Input.GetKey("escape"))
