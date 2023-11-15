@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SceneChange3 : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -73,12 +73,14 @@ public class SceneChange3 : MonoBehaviour
         else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
         {
             Debug.Log("GameOver");
-            FadeManager.Instance.LoadScene("GameOver3", 1.0f);
+            SceneManager.LoadScene("GameOver3");
+            
         }
         else if (other.gameObject.name == "ClearObject")
         {
             Debug.Log("GameClear");
-            FadeManager.Instance.LoadScene("GameClear3", 1.0f);
+            SceneManager.LoadScene("GameClear3");
+            
         }
     }
 

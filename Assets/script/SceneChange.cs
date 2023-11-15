@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
@@ -73,12 +74,12 @@ public class SceneChange : MonoBehaviour
         else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
         {
             Debug.Log("GameOver");
-            FadeManager.Instance.LoadScene("GameOver", 1.0f);
+            SceneManager.LoadScene("GameOver");
         }
         else if (other.gameObject.name == "ClearObject")
         {
             Debug.Log("GameClear");
-            FadeManager.Instance.LoadScene("GameClear", 1.0f);
+            SceneManager.LoadScene("GameClear");
         }
     }
 

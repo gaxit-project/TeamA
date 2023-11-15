@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Title_script : MonoBehaviour
 {
     public void Option_menu()
     {
-        FadeManager.Instance.LoadScene("Set", 2.0f);
+        SceneManager.LoadScene("Set");
     }
 
 
     public void Start_menu()
     {
-        FadeManager.Instance.LoadScene("tutorial", 1.0f);
+        SceneManager.LoadScene("tutorial");
     }
 
     public void Exit_menu()

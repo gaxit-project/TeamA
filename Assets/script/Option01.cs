@@ -1,37 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Option01 : MonoBehaviour
 {
     public void Title()
     {
-        FadeManager.Instance.LoadScene("Title", 1.0f);
+        SceneManager.LoadScene("Title");
+        
     }
 
     public void Next()
     {
-        FadeManager.Instance.LoadScene("Map Tsujino", 1.0f);
+        SceneManager.LoadScene("Map Tsujino");
+        
     }
 
     public void Next2()
     {
-        FadeManager.Instance.LoadScene("Map Kanda", 1.0f);
+        SceneManager.LoadScene("Map Kanda");
+        
     }
 
     public void Re1()
     {
-        FadeManager.Instance.LoadScene("tutorial", 1.0f);
+        SceneManager.LoadScene("tutorial");
+        
     }
 
     public void Re2()
     {
-        FadeManager.Instance.LoadScene("Map Tsujino", 1.0f);
+        SceneManager.LoadScene("Map Tsujino");
+        
     }
 
     public void Re3()
     {
-        FadeManager.Instance.LoadScene("Map Kanda", 1.0f);
+        SceneManager.LoadScene("Map Kanda");
+        
     }
 
 
