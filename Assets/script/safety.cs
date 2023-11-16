@@ -18,17 +18,24 @@ public class safety : MonoBehaviour
     public GameObject enemy3; //オブジェクト読み込み
     public enemymove enemymove3;
     public GameObject enemyhantei3; //オブジェクト読み込み
+    BoxCollider boxCol; //20231116追加 プレイヤーのコライダー読み込み用の変数
+    int flag = 0; //20231116追加 コライダーの位置を変えたかのフラグ(flag = 0: 位置を変えていない状態、flag = 1:位置を変えている状態)
 
     void Start()
     {
         GameManager = GameObject.Find("GameManager");
         gameManager = GameManager.GetComponent<GameManager>(); // スクリプトを取得
+        boxCol = GetComponent<BoxCollider>(); //20231116 コライダーのコンポーネントの取得
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "Yellow" && node.gameObject.name == "Yellow_Playerr") //黄色に触れて、かつ自分も黄色のとき
+        if (other.gameObject.name == "Yellow" && node.gameObject.name == "Yellow_Player") //黄色に触れて、かつ自分も黄色のとき
         {
+            /*if (flag == 0 && other.gameObject.name == "Hantei" && other.gameObject.name == "Hantei2" && other.gameObject.name == "Hantei3") // 位置をずらしていない状態かつ、敵の判定もある場合
+            {
+                boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
+            }*/
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -39,6 +46,10 @@ public class safety : MonoBehaviour
         }
         else if (other.gameObject.name == "Red" && node.gameObject.name == "Red_Player") //赤色に触れて、かつ自分も赤色のとき
         {
+            /*if (flag == 0 && other.gameObject.name == "Hantei" && other.gameObject.name == "Hantei2" && other.gameObject.name == "Hantei3") // 位置をずらしていない状態かつ、敵の判定もある場合
+            {
+                boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
+            }*/
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -49,6 +60,10 @@ public class safety : MonoBehaviour
         }
         else if (other.gameObject.name == "Blue" && node.gameObject.name == "Blue_Player") //青色に触れて、かつ自分も青色のとき
         {
+            /*if (flag == 0 && other.gameObject.name == "Hantei" && other.gameObject.name == "Hantei2" && other.gameObject.name == "Hantei3") // 位置をずらしていない状態かつ、敵の判定もある場合
+            {
+                boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
+            }*/
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -59,18 +74,30 @@ public class safety : MonoBehaviour
         }
         else if (other.gameObject.name == "Hantei")
         {
+            /*if (flag == 1) // 位置をずらしている状態
+            {
+                boxCol.size = new Vector3((float)0.2, 1, (float)0.2);
+            }*/
             //Debug.Log("見つかった!");
             enemymove.sakuteki = true;
             enemyhantei.SetActive(false);   // 無効にする
         }
         else if (other.gameObject.name == "Hantei2")
         {
+            /*if (flag == 1) // 位置をずらしている状態
+            {
+                boxCol.size = new Vector3((float)0.2, 1, (float)0.2);
+            }*/
             //Debug.Log("見つかった!");
             enemymove2.sakuteki = true;
             enemyhantei2.SetActive(false);   // 無効にする
         }
         else if (other.gameObject.name == "Hantei3")
         {
+            /*if (flag == 1) // 位置をずらしている状態
+            {
+                boxCol.size = new Vector3((float)0.2, 1, (float)0.2);
+            }*/
             //Debug.Log("見つかった!");
             enemymove3.sakuteki = true;
             enemyhantei3.SetActive(false);   // 無効にする

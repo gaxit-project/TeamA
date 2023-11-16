@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3122,7 +3122,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.308, y: 9.39, z: -0.841}
-  m_LocalScale: {x: 2, y: 20, z: -0.1}
+  m_LocalScale: {x: 2, y: 20, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 763993652}
@@ -4147,7 +4147,7 @@ Transform:
   m_GameObject: {fileID: 317756795}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13999999, z: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 1}
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9255,7 +9255,7 @@ Transform:
   m_GameObject: {fileID: 771253317}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13999999, z: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 1}
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10919,7 +10919,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.84, y: 10.04, z: -0.048}
-  m_LocalScale: {x: -0.1, y: 20, z: 2}
+  m_LocalScale: {x: 0.1, y: 20, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 763993652}
@@ -11637,7 +11637,7 @@ MonoBehaviour:
   enemyhantei2: {fileID: 1205420850}
   enemy3: {fileID: 1545788897}
   enemymove3: {fileID: 1545788898}
-  enemyhantei3: {fileID: 0}
+  enemyhantei3: {fileID: 1205420850}
   playerTurn: 1
   PPreX: 1
   PPreZ: 0
@@ -11681,11 +11681,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6, y: 1, z: 0.6}
+  m_Size: {x: 0.2, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &931126575
 Rigidbody:
@@ -12512,7 +12512,7 @@ Transform:
   m_GameObject: {fileID: 1018835998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15136,7 +15136,7 @@ Transform:
   m_GameObject: {fileID: 1205420850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15716,8 +15716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bbf54149683cd458ddf2b3606c7435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1797287249}
-  moveturn: {fileID: 0}
+  player: {fileID: 931126569}
+  moveturn: {fileID: 931126572}
   enemy: {fileID: 42625192}
   enemymove: {fileID: 42625193}
   enemy2: {fileID: 1104623202}
@@ -18775,7 +18775,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.286, y: 9.76, z: 0.2500001}
-  m_LocalScale: {x: 2, y: 20, z: -0.1}
+  m_LocalScale: {x: 2, y: 20, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 763993652}
@@ -25615,7 +25615,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.24, y: 8.29, z: 0.074}
-  m_LocalScale: {x: -0.1, y: 20, z: 2}
+  m_LocalScale: {x: 0.1, y: 20, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 763993652}
