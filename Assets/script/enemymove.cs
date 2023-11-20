@@ -43,7 +43,7 @@ public class enemymove : MonoBehaviour
 		yield return new WaitForSeconds(1.0f);
 
 		//ここに再開後の処理を書く
-		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), 0, Mathf.Floor(this.transform.position.z));
+		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
 		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;

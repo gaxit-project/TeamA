@@ -37,7 +37,7 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
-            boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
+            boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -52,7 +52,7 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
-            boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
+            boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -67,18 +67,14 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
-            boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
+            boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
             enemyhantei2.SetActive(true);
             enemymove3.sakuteki = false;
             enemyhantei3.SetActive(true);
-            //Debug.Log("Enter SafeZone");
-        }
-        else
-        {
-            boxCol.size = new Vector3((float)0.2, 1, (float)0.2);
+            Debug.Log("Enter SafeZone");
         }
 
 
@@ -116,6 +112,15 @@ public class safety : MonoBehaviour
         {
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver3");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "Red" || other.gameObject.name == "Blue" || other.gameObject.name == "Yellow")
+        {
+            boxCol.size = new Vector3((float)0.4, 1, (float)0.4);
+            Debug.Log("exit");
         }
     }
 }
