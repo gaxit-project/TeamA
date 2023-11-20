@@ -62,7 +62,7 @@ public class enemymove : MonoBehaviour
 		//ここに再開後の処理を書く
 		worldAngle.y = worldAngle.y + 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 		ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), 0, Mathf.Floor(this.transform.position.z));
+		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
 		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;

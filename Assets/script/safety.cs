@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class safety : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
+            boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -50,6 +52,7 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
+            boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -64,6 +67,7 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
+            boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -72,7 +76,13 @@ public class safety : MonoBehaviour
             enemyhantei3.SetActive(true);
             //Debug.Log("Enter SafeZone");
         }
-        else if (other.gameObject.name == "Hantei")
+        else
+        {
+            boxCol.size = new Vector3((float)0.2, 1, (float)0.2);
+        }
+
+
+        if (other.gameObject.name == "Hantei")
         {
             /*if (flag == 1) // à íuÇÇ∏ÇÁÇµÇƒÇ¢ÇÈèÛë‘
             {
@@ -101,6 +111,11 @@ public class safety : MonoBehaviour
             //Debug.Log("å©Ç¬Ç©Ç¡ÇΩ!");
             enemymove3.sakuteki = true;
             enemyhantei3.SetActive(false);   // ñ≥å¯Ç…Ç∑ÇÈ
+        }
+        else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
+        {
+            Debug.Log("GameOver");
+            SceneManager.LoadScene("GameOver3");
         }
     }
 }
