@@ -52,18 +52,19 @@ public class TurnManager : MonoBehaviour
         //Debug.Log("ターンエンド！");
         enemymove.PreX = Mathf.Floor(enemy.transform.position.x);
         enemymove.PreZ = Mathf.Floor(enemy.transform.position.z);
-        enemymove2.PreX = Mathf.Floor(enemy.transform.position.x);
-        enemymove2.PreZ = Mathf.Floor(enemy.transform.position.z);
-        enemymove3.PreX = Mathf.Floor(enemy.transform.position.x);
-        enemymove3.PreZ = Mathf.Floor(enemy.transform.position.z);
-        /*
-        enemy.transform.position = new Vector3(Mathf.Floor(enemymove.PreX), 0, Mathf.Floor(enemymove.PreZ));
-        enemy2.transform.position = new Vector3(Mathf.Floor(enemymove2.PreX), 0, Mathf.Floor(enemymove2.PreZ));
-        enemy3.transform.position = new Vector3(Mathf.Floor(enemymove3.PreX), 0, Mathf.Floor(enemymove3.PreZ));
-        */
+        enemymove2.PreX = Mathf.Floor(enemy2.transform.position.x);
+        enemymove2.PreZ = Mathf.Floor(enemy2.transform.position.z);
+        enemymove3.PreX = Mathf.Floor(enemy3.transform.position.x);
+        enemymove3.PreZ = Mathf.Floor(enemy3.transform.position.z);
+        
+        enemy.transform.position = new Vector3(Mathf.Floor(enemymove.PreX), enemymove.transform.position.y, Mathf.Floor(enemymove.PreZ));
+        enemy2.transform.position = new Vector3(Mathf.Floor(enemymove2.PreX), enemymove.transform.position.y, Mathf.Floor(enemymove2.PreZ));
+        enemy3.transform.position = new Vector3(Mathf.Floor(enemymove3.PreX), enemymove.transform.position.y, Mathf.Floor(enemymove3.PreZ));
+        
         moveturn.playerTurn = true;
         PEnd = true;
         EEnd = false;
+        Debug.Log("いいですと");
     }
 
     void Start()
@@ -77,7 +78,7 @@ public class TurnManager : MonoBehaviour
     {
         if(moveturn.playerTurn == false && PEnd)
         {
-            //Debug.Log("たーんまねっじ");
+            Debug.Log("たーんまねっじ");
             StartCoroutine("EndPTCoroutine");
 
         }

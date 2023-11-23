@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2053,7 +2053,7 @@ PrefabInstance:
     - target: {fileID: -3036841721298030549, guid: a23091879a8647d4b9e4df926c26020f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 95e4365a8c83fb14bb63ec1cd2b6aefb, type: 2}
+      objectReference: {fileID: 2100000, guid: 2d48146a1679ae14eaf4b28b0bbaabd5, type: 2}
     - target: {fileID: 919132149155446097, guid: a23091879a8647d4b9e4df926c26020f, type: 3}
       propertyPath: m_Name
       value: Two Handed Sword Death
