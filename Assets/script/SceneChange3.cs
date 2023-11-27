@@ -6,19 +6,22 @@ public class SceneChange3 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject TurnManagar; //オブジェクト読み込み
-    public TurnManager3 turnmanager; //オブジェクト読み込み
+    public TurnManager turnmanager; //オブジェクト読み込み
     public GameObject enemy; //オブジェクト読み込み
-    public enemymove3 enemymove;
+    public enemymove enemymove;
     public GameObject enemyhantei; //オブジェクト読み込み
     public GameObject enemy2; //オブジェクト読み込み
-    public enemymove3 enemymove2;
+    public enemymove enemymove2;
     public GameObject enemyhantei2; //オブジェクト読み込み
     public GameObject enemy3; //オブジェクト読み込み
-    public enemymove3 enemymove3;
+    public enemymove enemymove3;
     public GameObject enemyhantei3; //オブジェクト読み込み
-                                    //public float speed = 2; // スピード：Inspectorで指定
-    private void OnTriggerStay(Collider other)
+
+    //public float speed = 2; // スピード：Inspectorで指定
+
+    private void OnCollisionEnter(Collision other)
     {
+
         if (other.gameObject.name == "Yellow")
         {
             GetComponent<Renderer>().material.color = Color.yellow;
@@ -74,15 +77,14 @@ public class SceneChange3 : MonoBehaviour
         {
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver3");
-            
+
         }
         else if (other.gameObject.name == "ClearObject")
         {
             Debug.Log("GameClear");
             SceneManager.LoadScene("GameClear3");
-            
+
         }
     }
-
 
 }
