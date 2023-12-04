@@ -185,7 +185,7 @@ public class moveturn : MonoBehaviour
 				left = false;
 			}
 			*/
-			if (dph > 0 && sousaR == false)
+			if ((dph > 0 || Input.GetKey("d")) && sousaR == false)
             {
 				sousaR = true;
 				worldAngle.y = 45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -195,7 +195,7 @@ public class moveturn : MonoBehaviour
             {
 				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 			}
-			else if (dph < 0 && sousaL == false)
+			else if ((dph < 0 || Input.GetKey("a")) && sousaL == false)
 			{
 				sousaL = true;
 				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -205,7 +205,7 @@ public class moveturn : MonoBehaviour
 			{
 				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 			}
-			else if (dpv> 0 && sousaU == false)
+			else if ((dpv> 0 || Input.GetKey("w")) && sousaU == false)
 			{
 				sousaU = true;
 				worldAngle.y = -45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -215,7 +215,7 @@ public class moveturn : MonoBehaviour
 			{
 				PLtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 			}
-			else if (dpv < 0 && sousaD == false)
+			else if ((dpv < 0 || Input.GetKey("s")) && sousaD == false)
 			{
 				sousaD = true;
 				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更

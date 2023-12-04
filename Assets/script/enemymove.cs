@@ -10,11 +10,12 @@ public class enemymove : MonoBehaviour
 	public GameObject player; //オブジェクト読み込み
 	public GameObject Hantei; //オブジェクト読み込み
 	public moveturn moveturn; //スクリプト読み込み
-	public Hanteiscript Hanteiscript; //スクリプト読み込み
+	public GameObject JunkaiCube; //巡回の際、行ってほしい座標に置くオブジェクト
 	public float speed = 2; // スピード：Inspectorで指定
 
 	public bool enemyTurn;
 	public bool sakuteki = false;//プレイヤーを見つけたかどうか
+	public bool junkai;//プレイヤーを見つけたかどうか
 	public bool up = true;
 	public bool down = true;
 	public bool right = true;
@@ -40,7 +41,7 @@ public class enemymove : MonoBehaviour
 		//Debug.Log("敵がうごいてる!");
 
 		//1フレーム停止
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(1.5f);
 
 		//ここに再開後の処理を書く
 		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
@@ -57,7 +58,7 @@ public class enemymove : MonoBehaviour
 		//Debug.Log("敵がうごいてる!");
 
 		//1フレーム停止
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
 
 		//ここに再開後の処理を書く
 		worldAngle.y = worldAngle.y + 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -84,12 +85,19 @@ public class enemymove : MonoBehaviour
 		var ENx = this.transform.position.x;
 		var ENz = this.transform.position.z;
 
-		if (enemyTurn == true && sakuteki == false)
+		if (enemyTurn == true && sakuteki == false && junkai == false)
         {
 			if(fromx == ENx && fromz == ENz)
             {
 				//Debug.Log("監視中!");
 				StartCoroutine("ESakutekiCoroutine");
+				junkai = true;
+			}
+			else if (fromx == ENx && fromz == ENz)
+			{
+				//Debug.Log("監視中!");
+				StartCoroutine("ESakutekiCoroutine");
+				junkai = true;
 			}
 			if (Mathf.Floor(fromx) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
 			{
@@ -98,6 +106,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
 				Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
+				StopCoroutine("ESakutekiCoroutine");
 				up = false;
 				down = false;
 				right = false;
@@ -110,6 +119,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
 				Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
+				StopCoroutine("ESakutekiCoroutine");
 				up = false;
 				down = false;
 				left = false;
@@ -123,6 +133,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
 					Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
+					StopCoroutine("ESakutekiCoroutine");
 					up = false;
 					right = false;
 					left = false;
@@ -134,6 +145,71 @@ public class enemymove : MonoBehaviour
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
 					Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
+					StopCoroutine("ESakutekiCoroutine");
+					down = false;
+					right = false;
+					left = false;
+				}
+			}
+			else if (Mathf.Abs(PreX) - Mathf.Abs(ENx) > 0.9 || Mathf.Abs(ENx) - Mathf.Abs(PreX) > 1.15 || PreZ - ENz > 0.9 || ENz - PreZ > 1)
+			{
+				enemyTurn = false;
+			}
+		}
+		else if (enemyTurn && junkai == true && sakuteki == false)
+        {
+			Debug.Log("巡回中");
+			if (JunkaiCube.transform.position.x == ENx && JunkaiCube.transform.position.z == ENz)
+			{
+				junkai = false;
+				//StartCoroutine("ESakutekiCoroutine");
+			}
+			if (Mathf.Floor(JunkaiCube.transform.position.x) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
+			{
+				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
+				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
+				Debug.Log(ENx + " " + PreX);
+				StartCoroutine("EMoveCoroutine");
+				StopCoroutine("ESakutekiCoroutine");
+				up = false;
+				down = false;
+				right = false;
+			}
+			else if (Mathf.Floor(JunkaiCube.transform.position.x) > Mathf.Floor(ENx) && right == true && Mathf.Abs(ENx) - Mathf.Abs(PreX) < 1.15)//右
+			{
+				ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
+				worldAngle.y = 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
+				Debug.Log(ENx + " " + PreX);
+				StartCoroutine("EMoveCoroutine");
+				StopCoroutine("ESakutekiCoroutine");
+				up = false;
+				down = false;
+				left = false;
+			}
+			else if (Mathf.Floor(JunkaiCube.transform.position.x) == Mathf.Floor(PreX))
+			{
+				if (JunkaiCube.transform.position.z < ENz && down == true && PreZ - ENz < 0.9)//下
+				{
+					ENtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
+					worldAngle.y = 180.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
+					Debug.Log(ENz + " " + PreZ);
+					StartCoroutine("EMoveCoroutine");
+					StopCoroutine("ESakutekiCoroutine");
+					up = false;
+					right = false;
+					left = false;
+				}
+				else if (JunkaiCube.transform.position.z > ENz && up == true && ENz - PreZ < 1)//上
+				{
+					ENtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
+					worldAngle.y = 0.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
+					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
+					Debug.Log(ENz + " " + PreZ);
+					StartCoroutine("EMoveCoroutine");
+					StopCoroutine("ESakutekiCoroutine");
 					down = false;
 					right = false;
 					left = false;

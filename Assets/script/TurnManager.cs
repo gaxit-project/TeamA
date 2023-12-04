@@ -25,7 +25,7 @@ public class TurnManager : MonoBehaviour
 
 
         //1フレーム停止
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
 
         //ここに再開後の処理を書く
         //Debug.Log("ターンエンド！");
@@ -42,11 +42,11 @@ public class TurnManager : MonoBehaviour
     IEnumerator EndETCoroutine()
     {
         //ここに処理を書く
-        //Debug.Log("修正中");
+        Debug.Log("修正中");
 
 
         //1フレーム停止
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
 
         //ここに再開後の処理を書く
         //Debug.Log("ターンエンド！");
@@ -64,7 +64,7 @@ public class TurnManager : MonoBehaviour
         moveturn.playerTurn = true;
         PEnd = true;
         EEnd = false;
-        Debug.Log("いいですと");
+        //Debug.Log("いいですと");
     }
 
     void Start()
@@ -82,7 +82,7 @@ public class TurnManager : MonoBehaviour
             StartCoroutine("EndPTCoroutine");
 
         }
-        else if (enemymove.enemyTurn == false && EEnd)
+        else if ((enemymove.enemyTurn == false || enemymove2.enemyTurn == false || enemymove3.enemyTurn == false) && EEnd)
         {
             //Debug.Log("たーんまねっじ");
             StartCoroutine("EndETCoroutine");
