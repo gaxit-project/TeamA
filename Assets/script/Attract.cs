@@ -37,7 +37,7 @@ public class Attract : MonoBehaviour
         //1フレーム停止
         yield return new WaitForSeconds(0.0f);
 
-        flag = 2;
+        
 
         //ここに再開後の処理を書く
         //Debug.Log("ターンエンド！");
@@ -76,9 +76,6 @@ public class Attract : MonoBehaviour
             Look_txt.SetActive(false);
         }
 
-        else if(flag == 2)
-        {
-            Lost_txt.SetActive(false);
-        }
+        
     }
 }
