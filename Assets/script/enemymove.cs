@@ -24,8 +24,8 @@ public class enemymove : MonoBehaviour
 	public float PreX;
 	public float PreZ;
 
-	float fromx;
-	float fromz;
+	public float fromx;
+	public float fromz;
 
 	void Start()
 	{
