@@ -38,8 +38,8 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
-            //boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
-            boxCol.enabled = false;
+            boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
+            //boxCol.enabled = false;
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -47,7 +47,7 @@ public class safety : MonoBehaviour
             enemymove3.sakuteki = false;
             enemyhantei3.SetActive(true);
             //Debug.Log("Enter SafeZone");
-            flag = 1;
+            //flag = 1;
         }
         else if (other.gameObject.name == "Red" && node.gameObject.name == "Red_Player") //赤色に触れて、かつ自分も赤色のとき
         {
@@ -55,8 +55,8 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
-            //boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
-            boxCol.enabled = false;
+            boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
+            //boxCol.enabled = false;
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -64,7 +64,7 @@ public class safety : MonoBehaviour
             enemymove3.sakuteki = false;
             enemyhantei3.SetActive(true);
             //Debug.Log("Enter SafeZone");
-            flag = 1;
+            //flag = 1;
         }
         else if (other.gameObject.name == "Blue" && node.gameObject.name == "Blue_Player") //青色に触れて、かつ自分も青色のとき
         {
@@ -72,8 +72,8 @@ public class safety : MonoBehaviour
             {
                 boxCol.size = new Vector3((float)0.2, (float)0.1, (float)0.2);
             }*/
-            //boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
-            boxCol.enabled = false;
+            boxCol.size = new Vector3((float)0.4, (float)0.1, (float)0.4);
+            //boxCol.enabled = false;
             enemymove.sakuteki = false;
             enemyhantei.SetActive(true);
             enemymove2.sakuteki = false;
@@ -81,7 +81,7 @@ public class safety : MonoBehaviour
             enemymove3.sakuteki = false;
             enemyhantei3.SetActive(true);
             Debug.Log("Enter SafeZone");
-            flag = 1;
+            //flag = 1;
         }
 
 
@@ -128,8 +128,8 @@ public class safety : MonoBehaviour
     {
         if (other.gameObject.name == "Red" || other.gameObject.name == "Blue" || other.gameObject.name == "Yellow")
         {
-            //boxCol.size = new Vector3((float)0.1, 1, (float)0.1);
-            boxCol.enabled = true;
+            boxCol.size = new Vector3((float)0.1, 1, (float)0.1);
+            //boxCol.enabled = true;
             Debug.Log("exit");
         }
 
