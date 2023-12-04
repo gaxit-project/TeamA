@@ -27,7 +27,7 @@ public class safety : MonoBehaviour
         GameManager = GameObject.Find("GameManager");
         gameManager = GameManager.GetComponent<GameManager>(); // スクリプトを取得
         boxCol = GetComponent<BoxCollider>(); //20231116 コライダーのコンポーネントの取得
-        //boxCol.size = new Vector3((float)0.4, 1, (float)0.4);
+        boxCol.size = new Vector3((float)0.4, 1, (float)0.4);
     }
 
     void OnTriggerStay(Collider other)
