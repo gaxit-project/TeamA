@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -721,6 +721,8 @@ MonoBehaviour:
   left: 1
   PreX: 8
   PreZ: 6
+  fromx: 0
+  fromz: 0
 --- !u!65 &42625194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11688,6 +11690,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 931126571}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 931126577}
   m_SourcePrefab: {fileID: 100100000, guid: aecbee77a95de9e46b16e93a0d9e9d4d, type: 3}
 --- !u!1 &931126569 stripped
 GameObject:
@@ -11721,6 +11726,7 @@ MonoBehaviour:
   enemy3: {fileID: 1545788897}
   enemymove3: {fileID: 1545788898}
   enemyhantei3: {fileID: 0}
+  flag: 0
 --- !u!114 &931126572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11841,6 +11847,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &931126577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931126569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61da3abc18d5f7d49a14501870ed9dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 931126576}
 --- !u!1001 &931213478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13980,6 +13999,8 @@ MonoBehaviour:
   left: 1
   PreX: 9
   PreZ: 1
+  fromx: 0
+  fromz: 0
 --- !u!65 &1104623205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14735,6 +14756,8 @@ MonoBehaviour:
   left: 1
   PreX: 1
   PreZ: 3
+  fromx: 0
+  fromz: 0
 --- !u!65 &1151281278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19393,6 +19416,8 @@ MonoBehaviour:
   left: 1
   PreX: 6
   PreZ: 1
+  fromx: 0
+  fromz: 0
 --- !u!65 &1545788899
 BoxCollider:
   m_ObjectHideFlags: 0
