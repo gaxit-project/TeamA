@@ -89,7 +89,7 @@ public class enemymove : MonoBehaviour
         {
 			if(fromx == ENx && fromz == ENz)
             {
-				//Debug.Log("監視中!");
+				Debug.Log("監視中!");
 				StartCoroutine("ESakutekiCoroutine");
 				junkai = true;
 			}
@@ -161,8 +161,9 @@ public class enemymove : MonoBehaviour
 			Debug.Log("巡回中");
 			if (JunkaiCube.transform.position.x == ENx && JunkaiCube.transform.position.z == ENz)
 			{
+				Debug.Log("索敵中");
 				junkai = false;
-				//StartCoroutine("ESakutekiCoroutine");
+				StartCoroutine("ESakutekiCoroutine");
 			}
 			if (Mathf.Floor(JunkaiCube.transform.position.x) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
 			{
