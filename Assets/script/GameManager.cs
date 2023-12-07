@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private IEnumerator Inoperable(float i) // 操作を不能にする（引数の秒数間）
-    {
-        GameObject inputObj = GameObject.Find("InputManager");
-        moveturn inputScript = inputObj.GetComponent<moveturn>();
-        inputScript.enabled = false; // スクリプトを無効化
-        yield return new WaitForSeconds(i); // 引数の秒数だけ待つ
-        inputScript.enabled = true; // スクリプトを有効化
-        yield break;
-    }
+    public bool turn;//プレイヤーと敵のターンを判別、true=プレイヤー、false=敵
+    public GameObject[] numOfEnamy;//敵の数を入力するとその数だけ要素が入れられる
 
-    public void CallInoperable(float i)
-    {
-        StartCoroutine("Inoperable", i); // 他のスクリプトから呼び出す用
-    }
 }

@@ -64,7 +64,7 @@ public class TurnManager : MonoBehaviour
         moveturn.playerTurn = true;
         PEnd = true;
         EEnd = false;
-        //Debug.Log("Ç¢Ç¢Ç≈Ç∑Ç∆");
+        Debug.Log("Ç¢Ç¢Ç≈Ç∑Ç∆");
     }
 
     void Start()
@@ -78,13 +78,13 @@ public class TurnManager : MonoBehaviour
     {
         if(moveturn.playerTurn == false && PEnd)
         {
-            Debug.Log("ÇΩÅ[ÇÒÇ‹ÇÀÇ¡Ç∂");
+            
             StartCoroutine("EndPTCoroutine");
 
         }
-        else if ((enemymove.enemyTurn == false || enemymove2.enemyTurn == false || enemymove3.enemyTurn == false) && EEnd)
+        else if ((enemymove.enemyTurn == false && enemymove2.enemyTurn == false && enemymove3.enemyTurn == false) && EEnd)
         {
-            //Debug.Log("ÇΩÅ[ÇÒÇ‹ÇÀÇ¡Ç∂");
+            
             StartCoroutine("EndETCoroutine");
         }
     }

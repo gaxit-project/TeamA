@@ -15,7 +15,7 @@ public class enemymove : MonoBehaviour
 
 	public bool enemyTurn;
 	public bool sakuteki = false;//プレイヤーを見つけたかどうか
-	public bool junkai;//プレイヤーを見つけたかどうか
+	public bool junkai;//プレイヤーを見つけたかどうか true:junkaiCubeまで行く false:座標(fromX, fromZ)まで戻る
 	public bool up = true;
 	public bool down = true;
 	public bool right = true;
@@ -67,6 +67,7 @@ public class enemymove : MonoBehaviour
 		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;
+		Debug.Log("・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・");
 	}
 
 	void Update()
