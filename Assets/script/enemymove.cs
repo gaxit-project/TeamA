@@ -15,7 +15,7 @@ public class enemymove : MonoBehaviour
 
 	public bool enemyTurn;
 	public bool sakuteki = false;//プレイヤーを見つけたかどうか
-	public bool junkai;//プレイヤーを見つけたかどうか true:junkaiCubeまで行く false:座標(fromX, fromZ)まで戻る
+	public bool junkai;//プレイヤーを見つけたかどうか
 	public bool up = true;
 	public bool down = true;
 	public bool right = true;
@@ -38,13 +38,13 @@ public class enemymove : MonoBehaviour
 	IEnumerator EMoveCoroutine()
 	{
 		//ここに処理を書く
-		//Debug.Log("敵がうごいてる!");
+		Debug.Log("敵がうごいてる!");
 
 		//1フレーム停止
 		yield return new WaitForSeconds(1.5f);
 
 		//ここに再開後の処理を書く
-		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
+		//transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
 		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;
@@ -63,11 +63,10 @@ public class enemymove : MonoBehaviour
 		//ここに再開後の処理を書く
 		worldAngle.y = worldAngle.y + 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 		ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-		transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
+		//transform.position = new Vector3(Mathf.Floor(this.transform.position.x), this.transform.position.y, Mathf.Floor(this.transform.position.z));
 		enemyTurn = false;
 		PreX = this.transform.position.x;
 		PreZ = this.transform.position.z;
-		Debug.Log("・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・");
 	}
 
 	void Update()
@@ -93,13 +92,13 @@ public class enemymove : MonoBehaviour
 				Debug.Log("監視中!");
 				StartCoroutine("ESakutekiCoroutine");
 				junkai = true;
-			}
+			}/*
 			else if (fromx == ENx && fromz == ENz)
 			{
 				//Debug.Log("監視中!");
 				StartCoroutine("ESakutekiCoroutine");
 				junkai = true;
-			}
+			}*/
 			if (Mathf.Floor(fromx) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
 			{
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
@@ -155,6 +154,7 @@ public class enemymove : MonoBehaviour
 			else if (Mathf.Abs(PreX) - Mathf.Abs(ENx) > 0.9 || Mathf.Abs(ENx) - Mathf.Abs(PreX) > 1.15 || PreZ - ENz > 0.9 || ENz - PreZ > 1)
 			{
 				enemyTurn = false;
+				StopCoroutine("EMoveCoroutine");
 			}
 		}
 		else if (enemyTurn && junkai == true && sakuteki == false)
@@ -164,9 +164,9 @@ public class enemymove : MonoBehaviour
 			{
 				Debug.Log("索敵中");
 				junkai = false;
-				StartCoroutine("ESakutekiCoroutine");
+				//StartCoroutine("ESakutekiCoroutine");
 			}
-			if (Mathf.Floor(JunkaiCube.transform.position.x) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
+			if (Mathf.Floor(JunkaiCube.transform.position.x) < ENx && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
 			{
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -224,7 +224,7 @@ public class enemymove : MonoBehaviour
 		}
 		else if (enemyTurn == true && sakuteki == true)
 		{
-			if (Mathf.Floor(moveturn.PPreX) < Mathf.Floor(ENx) && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
+			if (Mathf.Floor(moveturn.PPreX) < ENx && left == true && Mathf.Abs(PreX) - Mathf.Abs(ENx) < 0.9)//左
 			{
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
@@ -274,11 +274,13 @@ public class enemymove : MonoBehaviour
 			}
 			else if (Mathf.Abs(PreX) - Mathf.Abs(ENx) > 0.9 || Mathf.Abs(ENx) - Mathf.Abs(PreX) > 1.15 || PreZ - ENz > 0.9 || ENz - PreZ > 1)
             {
+				StopCoroutine("ESakutekiCoroutine");
 				enemyTurn = false;
 			}
 		}
 		else if (enemyTurn == false)
 		{
+			StopCoroutine("ESakutekiCoroutine");
 			up = true;
 			down = true;
 			right = true;

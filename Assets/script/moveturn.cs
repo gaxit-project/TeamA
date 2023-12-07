@@ -35,6 +35,10 @@ public class moveturn : MonoBehaviour
 	public bool sousaL = false;
 	public bool sousaU = false;
 	public bool sousaD = false;
+	public float MaxX;
+	public float MinX;
+	public float MaxZ;
+	public float MinZ;
 
 	private Vector3 latestPos;  //前回のPosition
 
@@ -148,43 +152,23 @@ public class moveturn : MonoBehaviour
 
 		if (playerTurn)
 		{
-			/*
-			if ((dph > 0 || Input.GetKey("d")) && right == true && PLx - PPreX < 1)
-			{ // もし、右キーが押されたら
-				PLtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
-				worldAngle.y = 45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
-				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-				up = false;
-				down = false;
+            if (PPreX == MaxX)
+            {
+				sousaR = false;
+            }
+			if (PPreX == MinX)
+			{
+				sousaL = false;
 			}
-			else if (dph < 0 && left == true && PPreX - PLx < 0.9)
-			{ // もし、左キーが押されたら
-				PLtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
-				worldAngle.y = -135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
-				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-				up = false;
-				down = false;
+			if (PPreZ == MaxZ)
+			{
+				sousaU = false;
 			}
-			else if (dpv > 0 && up == true && PLz - PPreZ < 1)
-			{ // もし、上キーが押されたら
-				PLtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
-				worldAngle.y = -45.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
-				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-													  //StartCoroutine("MoveCoroutine");
-				Debug.Log("今:" + PLz + " " + "前:" + PPreZ);
-				right = false;
-				left = false;
+			if (PPreZ == MinZ)
+			{
+				sousaD = false;
 			}
-			else if (dpv < 0 && down == true && PPreZ - PLz < 0.9)
-			{ // もし、下キーが押されたら
-				PLtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
-				worldAngle.y = 135.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
-				PLtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log("今:" + PLz + " " + "前:" + PPreZ);
-				right = false;
-				left = false;
-			}
-			*/
+
 			if ((dph > 0 || Input.GetKey("d")) && sousaR == false)
             {
 				sousaR = true;
