@@ -115,7 +115,7 @@ public class safety : MonoBehaviour
             enemymove3.sakuteki = true;
             enemyhantei3.SetActive(false);   // –³Œø‚É‚·‚é
         }
-        
+
     }
 
 

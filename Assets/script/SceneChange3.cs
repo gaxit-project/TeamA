@@ -77,7 +77,6 @@ public class SceneChange3 : MonoBehaviour
         {
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver3");
-
         }
         else if (other.gameObject.name == "ClearObject")
         {

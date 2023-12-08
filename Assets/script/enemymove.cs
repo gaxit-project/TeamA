@@ -104,7 +104,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				StopCoroutine("ESakutekiCoroutine");
 				up = false;
@@ -117,7 +117,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 				worldAngle.y = 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				StopCoroutine("ESakutekiCoroutine");
 				up = false;
@@ -131,7 +131,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 					worldAngle.y = 180.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					StopCoroutine("ESakutekiCoroutine");
 					up = false;
@@ -143,7 +143,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 					worldAngle.y = 0.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					StopCoroutine("ESakutekiCoroutine");
 					down = false;
@@ -171,7 +171,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				StopCoroutine("ESakutekiCoroutine");
 				up = false;
@@ -183,7 +183,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 				worldAngle.y = 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				StopCoroutine("ESakutekiCoroutine");
 				up = false;
@@ -197,7 +197,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 					worldAngle.y = 180.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					StopCoroutine("ESakutekiCoroutine");
 					up = false;
@@ -209,7 +209,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 					worldAngle.y = 0.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					StopCoroutine("ESakutekiCoroutine");
 					down = false;
@@ -229,7 +229,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(-1, 0, 0) * Time.deltaTime;
 				worldAngle.y = -90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				up = false;
 				down = false;
@@ -241,7 +241,7 @@ public class enemymove : MonoBehaviour
 				ENtransform.position += new Vector3(1, 0, 0) * Time.deltaTime;
 				worldAngle.y = 90.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 				ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-				Debug.Log(ENx + " " + PreX);
+				//Debug.Log(ENx + " " + PreX);
 				StartCoroutine("EMoveCoroutine");
 				up = false;
 				down = false;
@@ -254,7 +254,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, -1) * Time.deltaTime;
 					worldAngle.y = 180.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					up = false;
 					right = false;
@@ -265,7 +265,7 @@ public class enemymove : MonoBehaviour
 					ENtransform.position += new Vector3(0, 0, 1) * Time.deltaTime;
 					worldAngle.y = 0.0f; // ワールド座標を基準にy軸を軸にした回転を指定した角度に変更
 					ENtransform.eulerAngles = worldAngle; // 回転角度を設定
-					Debug.Log(ENz + " " + PreZ);
+					//Debug.Log(ENz + " " + PreZ);
 					StartCoroutine("EMoveCoroutine");
 					down = false;
 					right = false;
