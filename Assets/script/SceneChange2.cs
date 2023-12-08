@@ -79,7 +79,7 @@ public class SceneChange2 : MonoBehaviour
         else if (other.gameObject.name == "ClearObject")
         {
             Debug.Log("GameClear");
-            SceneManager.LoadScene("GameClear2");
+            SceneManager.LoadScene("GameClear3");
         }
     }
 

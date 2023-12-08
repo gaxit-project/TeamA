@@ -14,15 +14,17 @@ public class Attract : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Effect_Look()
     {
+        Look_txt.SetActive(true);
         //ここに処理を書く
         //Debug.Log("修正中");
         this.transform.position = new Vector3(Mathf.Floor(enemymove.PreX), enemymove.transform.position.y, Mathf.Floor(enemymove.PreZ)); //Lost_txtとLook_txtを敵の座標に持ってくる
 
         //1フレーム停止
-        yield return new WaitForSeconds(0.0f);
+        yield return new WaitForSeconds(1.0f);
 
         //ここに再開後の処理を書く
         //Debug.Log("ターンエンド！");
+        flag = 1;
        
     }
 
@@ -56,8 +58,8 @@ public class Attract : MonoBehaviour
         if (enemymove.sakuteki && flag == 0)
         {
             Look_txt.SetActive(true);
-            //StartCoroutine("Effect_Look");
-            this.transform.position = new Vector3(enemy.transform.position.x, enemymove.transform.position.y, enemy.transform.position.z); //Lost_txtとLook_txtを敵の座標に持ってくる
+            StartCoroutine("Effect_Look");
+            //Lost_txtとLook_txtを敵の座標に持ってくる
             flag = 1;
         }
 
@@ -70,11 +72,12 @@ public class Attract : MonoBehaviour
         else if(enemymove.PreX == enemymove.fromx && enemymove.PreZ == enemymove.fromz)
         {
             Lost_txt.SetActive(false);
+            flag = 0;
         }
 
         else if(flag == 1)
         {
-            Look_txt.SetActive(false);
+           Look_txt.SetActive(false);
         }
 
         

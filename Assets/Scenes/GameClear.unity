@@ -1018,7 +1018,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 911900304}
         m_TargetAssemblyTypeName: Option01, Assembly-CSharp
-        m_MethodName: Next2
+        m_MethodName: Next
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2018,7 +2018,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1967547804}
         m_TargetAssemblyTypeName: Option01, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Title
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

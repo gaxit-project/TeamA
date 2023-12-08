@@ -76,7 +76,7 @@ public class SceneChange : MonoBehaviour
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver");
         }
-        else if (other.gameObject.name == "ClearObject" && other.gameObject.name == "Blue")
+        else if (other.gameObject.name == "ClearObject")
         {
             Debug.Log("GameClear");
             SceneManager.LoadScene("GameClear");

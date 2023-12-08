@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace CodeMonkey.KeyDoorSystemCM {
+/*namespace CodeMonkey.KeyDoorSystemCM {
 
     [CustomEditor(typeof(Readme_KeyDoorSystem))]
     [InitializeOnLoad]
@@ -127,4 +127,4 @@ namespace CodeMonkey.KeyDoorSystemCM {
     }
 
 
-}
+}*/
