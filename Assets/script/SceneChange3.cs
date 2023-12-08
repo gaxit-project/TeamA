@@ -19,7 +19,7 @@ public class SceneChange3 : MonoBehaviour
 
     //public float speed = 2; // スピード：Inspectorで指定
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerStay(Collider other)
     {
 
         if (other.gameObject.name == "Yellow")

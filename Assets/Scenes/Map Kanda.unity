@@ -7927,7 +7927,7 @@ GameObject:
   - component: {fileID: 742021705}
   - component: {fileID: 742021704}
   m_Layer: 0
-  m_Name: Hantei
+  m_Name: Hantei2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14519,7 +14519,7 @@ GameObject:
   - component: {fileID: 1382700127}
   - component: {fileID: 1382700126}
   m_Layer: 0
-  m_Name: Hantei
+  m_Name: Hantei2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15048,10 +15048,10 @@ MonoBehaviour:
   enemy: {fileID: 416408260}
   enemymove: {fileID: 416408262}
   enemyhantei: {fileID: 852622488}
-  enemy2: {fileID: 676786711}
-  enemymove2: {fileID: 676786712}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 284818624}
+  enemy2: {fileID: 284818624}
+  enemymove2: {fileID: 284818625}
+  enemyhantei2: {fileID: 1286576129}
+  enemy3: {fileID: 676786711}
   enemymove3: {fileID: 284818625}
   enemyhantei3: {fileID: 1286576129}
   flag: 0
@@ -15072,12 +15072,12 @@ MonoBehaviour:
   enemy: {fileID: 416408260}
   enemymove: {fileID: 416408262}
   enemyhantei: {fileID: 852622488}
-  enemy2: {fileID: 676786711}
-  enemymove2: {fileID: 676786712}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 284818624}
-  enemymove3: {fileID: 284818625}
-  enemyhantei3: {fileID: 1286576129}
+  enemy2: {fileID: 284818624}
+  enemymove2: {fileID: 284818625}
+  enemyhantei2: {fileID: 1286576129}
+  enemy3: {fileID: 676786711}
+  enemymove3: {fileID: 676786712}
+  enemyhantei3: {fileID: 0}
   playerTurn: 1
   PPreX: 0
   PPreZ: 0
@@ -15196,12 +15196,12 @@ MonoBehaviour:
   enemy: {fileID: 416408260}
   enemymove: {fileID: 416408262}
   enemyhantei: {fileID: 852622488}
-  enemy2: {fileID: 676786711}
-  enemymove2: {fileID: 676786712}
-  enemyhantei2: {fileID: 0}
-  enemy3: {fileID: 284818624}
-  enemymove3: {fileID: 284818625}
-  enemyhantei3: {fileID: 1286576129}
+  enemy2: {fileID: 284818624}
+  enemymove2: {fileID: 284818625}
+  enemyhantei2: {fileID: 1286576129}
+  enemy3: {fileID: 676786711}
+  enemymove3: {fileID: 676786712}
+  enemyhantei3: {fileID: 0}
 --- !u!114 &1437672560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18029,7 +18029,7 @@ GameObject:
   - component: {fileID: 1794410169}
   - component: {fileID: 1794410168}
   m_Layer: 0
-  m_Name: Hantei
+  m_Name: Hantei2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19035,7 +19035,7 @@ GameObject:
   - component: {fileID: 1945810696}
   - component: {fileID: 1945810695}
   m_Layer: 0
-  m_Name: Hantei
+  m_Name: Hantei2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19141,7 +19141,7 @@ GameObject:
   - component: {fileID: 1955496846}
   - component: {fileID: 1955496845}
   m_Layer: 0
-  m_Name: Hantei
+  m_Name: Hantei2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
