@@ -64,6 +64,7 @@ public class Attract : MonoBehaviour
         else if(enemymove.sakuteki == false && (enemymove.PreX != enemymove.fromx || enemymove.PreZ != enemymove.fromz) && flag == 1)
         {
             StartCoroutine("Effect_Lost");
+            flag = 0;
         }
 
         else if(enemymove.PreX == enemymove.fromx && enemymove.PreZ == enemymove.fromz)

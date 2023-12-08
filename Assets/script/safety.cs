@@ -115,11 +115,7 @@ public class safety : MonoBehaviour
             enemymove3.sakuteki = true;
             enemyhantei3.SetActive(false);   // –³Œø‚É‚·‚é
         }
-        else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
-        {
-            Debug.Log("GameOver");
-            SceneManager.LoadScene("GameOver3");
-        }
+        
     }
 
 

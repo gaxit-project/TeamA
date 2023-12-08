@@ -71,12 +71,12 @@ public class SceneChange : MonoBehaviour
             enemymove3.sakuteki = true;
             enemyhantei3.SetActive(false);   // –³Œø‚É‚·‚é
         }
-        else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
+        else if (other.gameObject.name == "OutZone")
         {
             Debug.Log("GameOver");
             SceneManager.LoadScene("GameOver");
         }
-        else if (other.gameObject.name == "ClearObject")
+        else if (other.gameObject.name == "ClearObject" && other.gameObject.name == "Blue")
         {
             Debug.Log("GameClear");
             SceneManager.LoadScene("GameClear");

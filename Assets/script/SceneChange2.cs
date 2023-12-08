@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneChange2 : MonoBehaviour
 {
@@ -70,15 +71,15 @@ public class SceneChange2 : MonoBehaviour
             enemymove3.sakuteki = true;
             enemyhantei3.SetActive(false);   // –³Œø‚É‚·‚é
         }
-        else if (other.gameObject.name == "OutZone" && other.gameObject.name != "Blue" && other.gameObject.name != "Red" && other.gameObject.name != "Yellow")
+        else if (other.gameObject.name == "OutZone" )
         {
             Debug.Log("GameOver");
-            FadeManager.Instance.LoadScene("GameOver2", 1.0f);
+            SceneManager.LoadScene("GameOver2");
         }
         else if (other.gameObject.name == "ClearObject")
         {
             Debug.Log("GameClear");
-            FadeManager.Instance.LoadScene("GameClear2", 1.0f);
+            SceneManager.LoadScene("GameClear2");
         }
     }
 

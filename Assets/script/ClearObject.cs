@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class ClearObject : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ClearObject : MonoBehaviour
         OnDestroyed.Invoke();
         Debug.Log("クリアマスに入った！");
         Destroy(gameObject, 0.0f);
+        //SceneManager.LoadScene("GameClear");
         /*if(BeKey == false)
         {
             OnDestroyed.Invoke();

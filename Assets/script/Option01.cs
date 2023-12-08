@@ -13,7 +13,7 @@ public class Option01 : MonoBehaviour
 
     public void Next()
     {
-        SceneManager.LoadScene("Map Tsujino");
+        SceneManager.LoadScene("Map Neo Tsujino");
         
     }
 
@@ -31,7 +31,7 @@ public class Option01 : MonoBehaviour
 
     public void Re2()
     {
-        SceneManager.LoadScene("Map Tsujino");
+        SceneManager.LoadScene("Map Neo Tsujino");
         
     }
 
