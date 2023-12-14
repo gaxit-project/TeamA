@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnManager : MonoBehaviour
 {
+    public Text NowTurn;
     public GameObject player; //オブジェクト読み込み
     public moveturn moveturn; //スクリプト読み込み
     public GameObject enemy; //オブジェクト読み込み
@@ -15,6 +17,9 @@ public class TurnManager : MonoBehaviour
 
     public bool PEnd;
     public bool EEnd;
+
+    private int count;
+    public bool OneCount;
 
     // Start is called before the first frame update
 
@@ -37,6 +42,7 @@ public class TurnManager : MonoBehaviour
         enemymove3.enemyTurn = true;
         PEnd = false;
         EEnd = true;
+        OneCount = true;
     }
 
     IEnumerator EndETCoroutine()
@@ -64,14 +70,25 @@ public class TurnManager : MonoBehaviour
         moveturn.playerTurn = true;
         PEnd = true;
         EEnd = false;
-        Debug.Log("いいですと");
+        //Debug.Log("いいですと");
+    }
+
+    public void CountTurn()
+    {
+        OneCount = false;
+        count++;
+        Debug.Log(count);
+        NowTurn.text = "現在のターン数 : " + count.ToString();
+
     }
 
     void Start()
     {
        PEnd = true;
        EEnd = false;
-}
+        count = 0;
+        OneCount = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -86,6 +103,11 @@ public class TurnManager : MonoBehaviour
         {
             //Debug.Log("たーんまねっじ");
             StartCoroutine("EndETCoroutine");
+        }
+
+        if(moveturn.playerTurn == true && OneCount)
+        {
+            CountTurn();
         }
     }
 }
