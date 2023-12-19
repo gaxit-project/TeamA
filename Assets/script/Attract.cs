@@ -10,6 +10,10 @@ public class Attract : MonoBehaviour
     public GameObject Look_txt;
     public int flag = 0; //flag‚ª0‚Ì‚Í
 
+    /// BGM‚Ìˆ—
+    [SerializeField] AudioSource NBGM;
+    [SerializeField] AudioSource CBGM;
+
 
     // Start is called before the first frame update
     IEnumerator Effect_Look()
@@ -46,8 +50,24 @@ public class Attract : MonoBehaviour
 
     }
 
+    void chaseBGM()
+    {
+        NBGM.Pause();
+        CBGM.Play();
+    }
+
+    void normalBGM()
+    {
+        CBGM.Pause();
+        NBGM.Play();
+    }
+
     void Start()
     {
+        ///BGM‚Ìˆ—
+        CBGM.Stop();
+        NBGM.Play();
+
         Lost_txt.SetActive(false);
         Look_txt.SetActive(false);
     }
@@ -57,6 +77,9 @@ public class Attract : MonoBehaviour
     {
         if (enemymove.sakuteki && flag == 0)
         {
+            /// BGM‚Ìˆ—
+            chaseBGM();
+
             Look_txt.SetActive(true);
             StartCoroutine("Effect_Look");
             //Lost_txt‚ÆLook_txt‚ğ“G‚ÌÀ•W‚É‚Á‚Ä‚­‚é
@@ -65,6 +88,9 @@ public class Attract : MonoBehaviour
 
         else if(enemymove.sakuteki == false && (enemymove.PreX != enemymove.fromx || enemymove.PreZ != enemymove.fromz) && flag == 1)
         {
+            /// BGM‚Ìˆ—
+            normalBGM();
+
             StartCoroutine("Effect_Lost");
             flag = 0;
         }
