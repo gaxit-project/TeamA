@@ -5,6 +5,8 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public key target;
+    public GameObject CloseDoor;
+    public GameObject OpenDoor;
 
     void OnDisable()
     {
@@ -16,6 +18,8 @@ public class Door : MonoBehaviour
         target.OnDestroyed.AddListener(() => {
             Debug.Log("ƒKƒ`ƒƒI");
             Destroy(gameObject, 0.5f);
+            CloseDoor.SetActive(false);   // –³Œø‚É‚·‚é
+            OpenDoor.SetActive(true);   // –³Œø‚É‚·‚é
         });
     }
 }
